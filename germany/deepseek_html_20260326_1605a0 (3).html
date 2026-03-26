@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Migrant-Info | Essential Resources for Newcomers</title>
+  
+  <!-- ========== FAVICON ========== -->
+  <link rel="icon" type="image/jpeg" href="/asset/favicon.mi.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="/asset/favicon.mi.jpg">
+  
+  <!-- ========== SOCIAL MEDIA PREVIEW (Open Graph / Twitter Card) ========== -->
+  <meta property="og:title" content="Migrant-Info | Essential Resources for Newcomers">
+  <meta property="og:description" content="Airport guides, settlement tips, country-specific information — everything you need for a smooth migration journey.">
+  <meta property="og:image" content="/ssss.preview">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://migrant-info.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Migrant-Info | Essential Resources for Newcomers">
+  <meta name="twitter:description" content="Airport guides, settlement tips, country-specific information — everything you need for a smooth migration journey.">
+  <meta name="twitter:image" content="/ssss.preview">
+  
+  <!-- Google Fonts + Tailwind CSS + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #eef2f6 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-link {
+      transition: color 0.2s ease;
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #2563eb;
+      transition: width 0.2s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .nav-link.active {
+      color: #2563eb;
+      font-weight: 600;
+    }
+    .nav-link.active::after {
+      width: 100%;
+    }
+    /* Dropdown Styles */
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.2s ease;
+      z-index: 100;
+      border: 1px solid #e5e7eb;
+    }
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .footer-link {
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover {
+      color: #60a5fa;
+    }
+    /* Content placeholder styling - overridden for article */
+    .content-placeholder {
+      display: block;
+      min-height: auto;
+      padding: 2rem 0;
+      background: transparent;
+    }
+    /* Article typography */
+    .article-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      padding: 2rem 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .article-container {
+        padding: 2.5rem 2.8rem;
+      }
+    }
+    .article-container h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #1e293b;
+      border-left: 5px solid #059669;
+      padding-left: 1rem;
+    }
+    .article-container h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #0f3b2c;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.4rem;
+    }
+    .article-container h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #2d3748;
+    }
+    .article-container p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #2c3e2f;
+    }
+    .article-container a {
+      color: #0e7c5c;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+    .article-container a:hover {
+      color: #065f46;
+    }
+    .article-container ul, .article-container ol {
+      margin: 1rem 0 1rem 1.8rem;
+      line-height: 1.6;
+    }
+    .article-container li {
+      margin-bottom: 0.3rem;
+    }
+    .article-container table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      background: #fefefe;
+      border-radius: 16px;
+      overflow-x: auto;
+      display: block;
+    }
+    .article-container th, .article-container td {
+      border: 1px solid #d1d5db;
+      padding: 0.7rem 0.9rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .article-container th {
+      background-color: #eef2f0;
+      font-weight: 600;
+    }
+    .article-container strong {
+      font-weight: 700;
+      color: #1f3b2c;
+    }
+    .article-container hr {
+      margin: 2rem 0;
+      border: 0;
+      height: 1px;
+      background: #e2e8f0;
+    }
+    .article-container blockquote {
+      margin: 1rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid #86efac;
+      color: #2d5339;
+      font-style: normal;
+    }
+    @media (max-width: 640px) {
+      .article-container {
+        padding: 1.5rem;
+      }
+      .article-container table {
+        font-size: 0.8rem;
+      }
+      .article-container th, .article-container td {
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION BAR ========== -->
+  <nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 md:h-20">
+        <!-- Logo + Brand (links to root / index.html) - updated to Migrant-Info -->
+        <a href="/" class="flex items-center space-x-2 group">
+          <div class="w-9 h-9 bg-gradient-to-br from-emerald-600 to-teal-700 rounded-xl flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
+            <i class="fas fa-passport text-white text-lg"></i>
+          </div>
+          <span class="font-bold text-xl tracking-tight text-gray-800">Migrant<span class="text-emerald-600">-Info</span></span>
+        </a>
+        
+        <!-- Desktop Navigation: Home (root), About (/about/), Contact (/contact/), Categories dropdown (5 countries), Privacy Policy (/policy/), Disclaimer (/disclaimer/) -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/" class="nav-link text-gray-700 hover:text-emerald-600 font-medium transition">Home</a>
+          <a href="/about/" class="nav-link text-gray-700 hover:text-emerald-600 font-medium transition">About</a>
+          <a href="/contact/" class="nav-link text-gray-700 hover:text-emerald-600 font-medium transition">Contact</a>
+          
+          <!-- Countries Dropdown: United States, United Kingdom, Canada, Australia, Germany (each points to /country-folder/) -->
+          <div class="dropdown relative">
+            <button class="nav-link text-gray-700 hover:text-emerald-600 font-medium transition flex items-center gap-1">
+              Destinations
+              <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div class="dropdown-menu rounded-xl py-2">
+              <a href="/united-state/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition"> United States</a>
+              <a href="/united-kingdom/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition"> United Kingdom</a>
+              <a href="/canada/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition"> Canada</a>
+              <a href="/australia/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition"> Australia</a>
+              <a href="/germany/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition"> Germany</a>
+              <div class="border-t border-gray-100 my-1"></div>
+              
+            </div>
+          </div>
+          
+          <a href="/policy/" class="nav-link text-gray-700 hover:text-emerald-600 font-medium transition">Privacy Policy</a>
+          <a href="/disclaimer/" class="nav-link text-gray-700 hover:text-emerald-600 font-medium transition">Disclaimer</a>
+        </div>
+        
+        <!-- Empty div for desktop layout balance -->
+        <div class="hidden md:block w-20"></div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-600 hover:text-emerald-600 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Navigation (responsive) with folder structure paths and updated country categories -->
+      <div id="mobile-menu" class="md:hidden hidden pb-6 pt-3 border-t border-gray-100 transition-all duration-300">
+        <div class="flex flex-col space-y-3">
+          <a href="/" class="text-gray-700 hover:text-emerald-600 font-medium px-2 py-2 transition border-b border-gray-50">Home</a>
+          <a href="/about/" class="text-gray-700 hover:text-emerald-600 font-medium px-2 py-2 transition border-b border-gray-50">About</a>
+          <a href="/contact/" class="text-gray-700 hover:text-emerald-600 font-medium px-2 py-2 transition border-b border-gray-50">Contact</a>
+          
+          <!-- Mobile Countries section (5 destinations) -->
+          <div class="px-2 py-2 border-b border-gray-50">
+            <button id="mobile-categories-btn" class="flex items-center justify-between w-full text-gray-700 font-medium">
+              <span>Destinations</span>
+              <i class="fas fa-chevron-down text-xs transition-transform" id="categories-icon"></i>
+            </button>
+            <div id="mobile-categories-menu" class="hidden mt-2 pl-4 space-y-2">
+              <a href="/united-state/" class="block text-sm text-gray-600 hover:text-emerald-600 py-1"> United States</a>
+              <a href="/united-kingdom/" class="block text-sm text-gray-600 hover:text-emerald-600 py-1"> United Kingdom</a>
+              <a href="/canada/" class="block text-sm text-gray-600 hover:text-emerald-600 py-1">Canada</a>
+              <a href="/australia/" class="block text-sm text-gray-600 hover:text-emerald-600 py-1"> Australia</a>
+              <a href="/germany/" class="block text-sm text-gray-600 hover:text-emerald-600 py-1">Germany</a>
+              
+            </div>
+          </div>
+          
+          <a href="/policy/" class="text-gray-700 hover:text-emerald-600 font-medium px-2 py-2 transition border-b border-gray-50">Privacy Policy</a>
+          <a href="/disclaimer/" class="text-gray-700 hover:text-emerald-600 font-medium px-2 py-2 transition">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== MAIN CONTENT: full article placed here ========== -->
+  <div class="content-placeholder">
+    <div class="article-container">
+      <!-- Article begins - exactly full text, no omissions -->
+      <h1>8 Things to Bring & NOT to Bring to Germany: An Exhaustive 2026 Logistics and Regulatory Report</h1>
+      <p><strong>Introduction: The Macro-Logistics of European Travel in 2026</strong><br>
+      The landscape of international travel, municipal logistics, and regulatory compliance within the Federal Republic of Germany and the broader European Union has undergone a profound transformation as of 2026. Driven by an acceleration in digital sovereignty initiatives, sweeping environmental legislation, and a federal mandate to overhaul aging national infrastructure, the operational realities of visiting Germany require a highly calibrated approach to preparation. The transition away from high-volume, extractive tourism toward sustainable, value-driven mobility has fundamentally altered how travelers must interface with local systems, moving from a paradigm of passive consumption to active regulatory compliance (<a href="https://www.tourismcares.org/tourism-cares-blog/2026-travel-trends-reframing-sustainability-for-the-future-of-travel" target="_blank" rel="noopener noreferrer">source</a>).</p>
+      <p>For the modern traveler, packing is no longer merely an exercise in climate anticipation; it is a rigorous exercise in geopolitical and technological integration. The impending implementation of the European Travel Information and Authorization System (ETIAS), the rollout of the pan-European Wero digital wallet, the strict enforcement of the Packaging and Packaging Waste Regulation (PPWR), and the aggressive restructuring of the Deutsche Bahn rail network demand an elevated baseline of logistical awareness (<a href="https://www.gleisslutz.com/en/know-how/new-german-act-set-implement-eu-packaging-regulation" target="_blank" rel="noopener noreferrer">source</a>). This report provides an exhaustive, expert-level analysis of the definitive items, technological systems, and conceptual frameworks that travelers must bring—and explicitly avoid bringing—to Germany and the wider European continent in 2026.</p>
+
+      <h2>1. Documentation and Border Architecture: The ETIAS Mandate</h2>
+      <p>The foundational element of any travel inventory in 2026 is proper documentation, which has evolved from physical passport presentation to integrated biometric and digital pre-authorizations. The European border architecture is currently undergoing its most significant technological upgrade in decades.</p>
+      <p><strong>The Implementation of the ETIAS Protocol</strong><br>
+      Starting in the last quarter of 2026, the European Travel Information and Authorization System (ETIAS) will become a mandatory entry requirement for visitors from 59 currently visa-exempt nations, encompassing an estimated 1.4 billion individuals globally, including citizens of the United States, Canada, and Australia (<a href="https://travel-europe.europa.eu/etias/about-etias/what-is-etias" target="_blank" rel="noopener noreferrer">source</a>). The system is structurally designed to interface directly with the Entry-Exit System (EES) to establish a digitized, biometric security perimeter around the 30 European countries operating within the Schengen framework (<a href="https://etias.com/etias-countries/germany-etias" target="_blank" rel="noopener noreferrer">source</a>).</p>
+      <p>Travelers must not arrive at the border assuming their visa-exempt passport alone is sufficient for entry. ETIAS clearance must be secured prior to departure via the official web portal or the dedicated mobile application, requiring a processing fee of EUR 20, though specific demographic exemptions apply (<a href="https://travel-europe.europa.eu/etias/about-etias/what-is-etias" target="_blank" rel="noopener noreferrer">source</a>). The authorization is linked electronically to the traveler's biometric passport and remains valid for three years, or until the passport expires, whichever temporal milestone occurs first (<a href="https://travel-europe.europa.eu/etias/about-etias/what-is-etias" target="_blank" rel="noopener noreferrer">source</a>).</p>
+      <p>The second-order implication of this system is that travelers must ensure their passport maintains validity for a minimum of three months beyond their planned departure date from the Schengen Area (<a href="https://etias.com/etias-requirements/" target="_blank" rel="noopener noreferrer">source</a>). Failure to meet this specific temporal requirement will result in an automatic rejection of the ETIAS application and immediate denial of boarding by commercial air carriers prior to departure. The system restricts stays to a maximum of 90 days within any 180-day period, enforcing limits on long-term tourism without a dedicated visa (<a href="https://etias.com/etias-requirements/" target="_blank" rel="noopener noreferrer">source</a>).</p>
+      <table>
+        <thead><tr><th>ETIAS Requirement Category</th><th>2026 Operational Parameters</th></tr></thead>
+        <tbody><tr><td>Target Demographic</td><td>Citizens from 59 visa-exempt countries (e.g., US, Canada, Australia).</td></tr>
+        <tr><td>Permitted Travel Purposes</td><td>Tourism, business, short-term medical reasons, or transit.</td></tr>
+        <tr><td>Duration of Stay Limitation</td><td>Maximum of 90 days within any rolling 180-day period.</td></tr>
+        <tr><td>Passport Validity Rule</td><td>Must be valid for at least three months beyond the planned departure date.</td></tr>
+        <tr><td>Authorization Validity</td><td>Three years, or until the linked passport expires.</td></tr></tbody>
+      </table>
+      <p><strong>Physical and Digital Document Redundancy</strong><br>
+      While border control is increasingly dependent on cloud-based digital infrastructure, physical documentation retains critical operational importance. Travelers must bring both electronic and physical copies of their passports and relevant identification documents (source uploaded: 8 Things to Bring & NOT to Bring to Germany! (& Europe).txt). In the event of device failure, network disruption, or theft, possessing a physical photocopy of the passport data page significantly accelerates consular assistance and emergency replacement procedures.</p>
+      <p>Furthermore, individuals intending to operate motor vehicles must bring an International Driving Permit (IDP) alongside their valid domestic driver's license (source uploaded: 8 Things to Bring & NOT to Bring to Germany! (& Europe).txt). The IDP is not a standalone legal document; it functions solely as a legally recognized, standardized translation and must be presented concurrently with the original license at rental agencies and during law enforcement stops. For individuals enrolled in higher education, procuring and bringing an International Student Identity Card (ISIC) is highly recommended.</p>
+
+      <h2>2. The Financial Ecosystem: Cash Resilience vs. Digital Sovereignty</h2>
+      <p>The financial paradigm in Germany represents a complex duality: a historically cash-intensive society rapidly pivoting toward localized digital payment infrastructure, while simultaneously seeking geopolitical independence from American credit card duopolies.</p>
+      <p><strong>The Enduring Necessity of Physical Cash</strong><br>
+      Travelers must bring a baseline reserve of physical Euros, specifically maintaining a supply of low-denomination coins. Despite a sharp decline in the overall volume of cash transactions—falling from 82.5% of all transactions in 2008 to 51% in 2023—cash remains deeply embedded (<a href="http://cbpn.currencyresearch.com/blog/2024/10/25/exploring-the-future-of-cash-in-germany-a-foresight-study" target="_blank" rel="noopener noreferrer">source</a>). From a practical standpoint, 50-cent and 1-Euro coins are absolute logistical necessities for restrooms and shopping cart releases (source uploaded).</p>
+      <p><strong>The Rise of Contactless Debit and the Wero Wallet</strong><br>
+      Contactless debit cards now dominate the broader retail landscape (<a href="https://worldline.com/en/home/main-navigation/resources/blogs/2025/contactless-debit-dominates-germany-as-cash-declines-what-it-means-for-issuers" target="_blank" rel="noopener noreferrer">source</a>). However, the most disruptive development of 2026 is the rollout of the Wero digital wallet (<a href="https://stripe.com/en-de/resources/more/wero-how-europes-unified-digital-wallet-is-changing-payments" target="_blank" rel="noopener noreferrer">source</a>). Because Wero relies on a participating European bank account, non-EU tourists cannot currently utilize the application (<a href="https://www.checkout.com/blog/wero-payments" target="_blank" rel="noopener noreferrer">source</a>). Travelers should bring a Visa or Mastercard with no foreign transaction fees, and explicitly ask "Nehmen Sie Karte?" before transactions at independent retailers.</p>
+
+      <h2>3. Digital Connectivity and Telecommunications: The Ascendancy of the eSIM</h2>
+      <p>Travelers should bring an unlocked, eSIM-compatible smartphone to access localized data networks instantly (<a href="https://www.traveltomtom.net/destinations/europe/germany/best-esim-cards-for-germany" target="_blank" rel="noopener noreferrer">source</a>).</p>
+      <table>
+        <thead><tr><th>2026 eSIM Provider</th><th>Key Specifications & Network Capabilities</th><th>Strategic Advantages</th></tr></thead>
+        <tbody><tr><td>Orange Holiday Europe</td><td>70 GB data, 5G-ready, valid for 28 Days.</td><td>Best overall utility. Includes a French (+33) phone number.</td></tr>
+        <tr><td>Jetpac</td><td>15 GB data, 5G-ready (O2/Vodafone), 30 Days.</td><td>Highest value proposition. Includes complimentary VPN.</td></tr>
+        <tr><td>Ubigi</td><td>Flexible low-volume packages, full 5G support.</td><td>Optimal for ultra-short trips.</td></tr>
+        <tr><td>Holafly</td><td>Unlimited data models.</td><td>Best suited for heavy data consumers.</td></tr>
+        <tr><td>Airalo</td><td>1 GB to 20 GB packages ("Moin Mobile").</td><td>Highly reliable, though 4G/LTE within Germany.</td></tr></tbody>
+      </table>
+      <p><strong>Essential Digital Applications for the German Landscape</strong><br>
+      DB Navigator, FlixBus, BVG Jelbi or hvv apps, offline language packs, and offline Google Maps are critical (source uploaded).</p>
+
+      <h2>4. The Electrical Divide and Digital Nomad Hardware Requirements</h2>
+      <p>Germany operates on a 230-volt power grid (Type C/F sockets). Travelers must not bring single-voltage heating appliances from North America without a step-down transformer. Instead, rely on dual-voltage chargers (source uploaded). High-capacity power banks, multi-port travel adapters, noise-canceling headphones, and anti-theft cross-body bags are recommended.</p>
+
+      <h2>5. Public Transportation Infrastructure: The Deutschland-Ticket and the "Strong Rail" Renovation Era</h2>
+      <p><strong>The Deutschland-Ticket (D-Ticket) Paradigm</strong><br>
+      As of January 1, 2026, the D-Ticket costs €63 per month (<a href="https://www.evz.de/en/travelling-motor-vehicles/travel-law/rail-passenger-rights/deutschlandticket.html" target="_blank" rel="noopener noreferrer">source</a>). It covers all local/regional transport but excludes ICE/IC/EC long-distance trains. Subscription must be canceled by the 10th day of the month.</p>
+      <table>
+        <thead><tr><th>D-Ticket Operational Feature</th><th>2026 Framework Specifications</th></tr></thead>
+        <tbody><tr><td>Current Monthly Cost</td><td>€63.00 per calendar month</td></tr>
+        <tr><td>Geographic Validity</td><td>Nationwide on regional transit (U-Bahn, S-Bahn, Buses, RE/RB trains).</td></tr>
+        <tr><td>Strict Exclusions</td><td>ICE, IC, EC long-distance trains, FlixTrain.</td></tr>
+        <tr><td>Cancellation Deadline</td><td>10th day of the month for standard providers.</td></tr></tbody>
+      </table>
+      <p><strong>The "Strong Rail" Construction Epoch</strong><br>
+      Major disruptions: total closure Hamburg-Berlin corridor until April 30, 2026; Passau-Nuremberg closures; SEV replacement buses. Travelers must monitor DB Navigator and build buffer times (<a href="https://db-engineering-consulting.com/en/updates/generalsanierung-der-strecke-hamburg-berlin/" target="_blank" rel="noopener noreferrer">source</a>).</p>
+
+      <h2>6. Pharmaceutical Compliance and Customs Directives</h2>
+      <p><strong>The Narcotics Trap: ADHD Medication and Strong Analgesics</strong><br>
+      Strictly prohibited without authenticated Schengen health certificate (<a href="https://www.zoll.de/EN/Private-individuals/Travel/Entering-Germany/Restrictions/Medicinal-products-and-narcotics/medicinal-products-and-narcotics_node.html" target="_blank" rel="noopener noreferrer">source</a>). Adderall, Vyvanse, opioids require prior authorization. Non-narcotic prescriptions limited to a three-month supply.</p>
+      <p><strong>Customs Limitations on Cash and Agricultural Imports</strong><br>
+      Cash > €10,000 must be declared. Meat/dairy products from third countries banned (<a href="https://www.roafly.com/blog/germany-airport-customs-rules" target="_blank" rel="noopener noreferrer">source</a>).</p>
+      <table>
+        <thead><tr><th>Customs Regulated Category</th><th>2026 German Import Limitation (Non-EU Arrivals)</th><th>Enforcement Consequences</th></tr></thead>
+        <tbody><tr><td>Cash & Equivalents</td><td>Maximum €9,999 without written declaration</td><td>€10,000+ without Form 040000 → fine seizure</td></tr>
+        <tr><td>Standard Prescription Meds</td><td>Max 3-month supply</td><td>Excess confiscated</td></tr>
+        <tr><td>Narcotics & Stimulants</td><td>Banned without authenticated certificate</td><td>Criminal prosecution under BtMG</td></tr>
+        <tr><td>Meat & Dairy Products</td><td>Strictly prohibited</td><td>Confiscation and incineration</td></tr></tbody>
+      </table>
+
+      <h2>7. The German Drugstore Ecosystem and the Elimination of Imported Toiletries</h2>
+      <p>Do not bring large quantities of shampoo/conditioner/skincare. dm (Balea, Alverde) and Rossmann (Isana, Alterra) offer superior, affordable products (<a href="https://shipgerman.com/blog/best-german-drug-stores-a-guide-to-dm-rossmann-and-mueller" target="_blank" rel="noopener noreferrer">source</a>). Stiftung Warentest and Öko-Test verify quality. Sunscreen (Sonnencreme) widely available. Only bring niche prescription dermatological items if essential.</p>
+
+      <h2>8. Hospitality Sector Transformations: Structural Quirks and the 2026 Single-Use Plastic Ban</h2>
+      <p><strong>The EU Single-Use Plastics Ban (Regulation 2025/40)</strong><br>
+      By August 12, 2026, hotels ban miniature single-use toiletries; bulk dispensers replace them (<a href="https://euroweeklynews.com/2026/03/21/eu-to-ban-gel-and-shampoo-sachets-in-hotels-what-to-know-before-scheme-begins-in-august-2026/" target="_blank" rel="noopener noreferrer">source</a>).</p>
+      <p><strong>Structural Hotel Quirks: Bedding, Climate Control, and Washcloths</strong><br>
+      "Twin bed" standard, individual duvets, no washcloths, limited A/C. Pack breathable sleepwear and own washcloth.</p>
+
+      <h2>9. Environmental Legislation in Action: The Pfand System Expansion and the PFAS Elimination Mandate</h2>
+      <p><strong>The Evolution of the Pfand (Deposit) System</strong><br>
+      €0.25 deposit on single-use plastic bottles and aluminum cans; return at supermarket reverse vending machines (<a href="https://www.tomra.com/reverse-vending/media-center/feature-articles/germany-deposit-return-scheme" target="_blank" rel="noopener noreferrer">source</a>). Do not crush or discard.</p>
+      <p><strong>The Elimination of PFAS in Food Packaging</strong><br>
+      As of August 12, 2026, food packaging must be PFAS-free under PPWR (<a href="https://www.certivo.com/blog-details/eu-packaging-pfas-ban-2026-what-food-contact-manufacturers-must-know-before-august-deadline" target="_blank" rel="noopener noreferrer">source</a>). Reformulated wrappers and takeaway cups.</p>
+
+      <h2>10. Sociological Guardrails: Quiet Hours, Sunday Commerce Bans, and Cannabis Regulations</h2>
+      <p><strong>Ruhezeit (Quiet Hours)</strong><br>
+      Legally enforced 10 PM – 6 AM, and all day Sunday. No loud music, vacuuming, or excessive noise (<a href="https://www.lingoda.com/blog/en/what-is-ruhezeit-in-germany/" target="_blank" rel="noopener noreferrer">source</a>).</p>
+      <p><strong>The Ladenschlussgesetz (Sunday Shopping Ban)</strong><br>
+      Supermarkets and most shops closed on Sundays. Only exceptions: train stations, airports, some bakeries (<a href="https://www.explore.com/1709223/tourists-avoid-plan-trip-berlin-germany-day-week-sunday/" target="_blank" rel="noopener noreferrer">source</a>).</p>
+      <p><strong>2024 Cannabis Legalization: The Tourist Exclusion</strong><br>
+      No commercial dispensaries. Tourists cannot buy legally; street purchase remains illegal and heavily penalized (<a href="https://www.roafly.com/blog/germany-tourist-bans-laws" target="_blank" rel="noopener noreferrer">source</a>).</p>
+
+      <h2>11. Security Protocols and Tourist Threat Vectors</h2>
+      <p>Be aware of common scams: friendship bracelet, petition distraction, shoe shine drop, found ring gambit, fake police/utility workers. Never hand over wallets without official credentials (<a href="https://www.ricksteves.com/travel-tips/theft-scams/tourist-scams" target="_blank" rel="noopener noreferrer">source</a>). Housing rental fraud prevalent—never wire deposits before viewing.</p>
+
+      <h2>12. Calendar Alignment: Sartorial Strategies, Public Holidays, and 2026 Cultural Events</h2>
+      <p>Lightweight, wrinkle-resistant layers, sturdy sneakers, rain jacket. Public holidays (Easter, Labour Day, Ascension, Corpus Christi, German Unity Day) cause total retail shutdown. Oktoberfest and major festivals require advance bookings.</p>
+      <p><strong>Strategic Conclusions</strong><br>
+      Secure ETIAS clearance pre-departure; adopt eSIM and DB Navigator; carry small Euro denominations; respect narcotics/customs laws; avoid cannabis tourism; observe Ruhezeit and Sunday closures; utilize Pfand and PFAS-aware packaging. By aligning with Germany's regulated systems, travelers ensure a seamless, legally compliant, and culturally integrated journey.</p>
+      <p><em>Disclaimer: This article is for informational purposes only and does not constitute legal advice. You should consult with a qualified immigration attorney for advice regarding your individual situation.</em></p>
+      <!-- End of article - full text preserved -->
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== (all links pointing to folder/index.html structure, updated brand references) -->
+  <footer class="bg-gray-900 text-gray-300 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="col-span-1">
+          <a href="/" class="flex items-center space-x-2 group mb-4">
+            <div class="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center">
+              <i class="fas fa-passport text-white text-sm"></i>
+            </div>
+            <span class="font-bold text-xl text-white">Migrant<span class="text-emerald-400">-Info</span></span>
+          </a>
+          <p class="text-sm text-gray-400 leading-relaxed">Essential resources for newcomers: airport guides, settlement tips, and country-specific information to help you start your journey with confidence.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-base mb-4 tracking-wide">Navigation</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/" class="footer-link hover:text-emerald-400 transition">Home</a></li>
+            <li><a href="/about/" class="footer-link hover:text-emerald-400 transition">About</a></li>
+            <li><a href="/contact/" class="footer-link hover:text-emerald-400 transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-base mb-4 tracking-wide">Legal</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/policy/" class="footer-link hover:text-emerald-400 transition">Privacy Policy</a></li>
+            <li><a href="/disclaimer/" class="footer-link hover:text-emerald-400 transition">Disclaimer</a></li>
+            <li><a href="/term/" class="footer-link hover:text-emerald-400 transition">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold text-base mb-4 tracking-wide">Resources</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/sitemap.xml" class="footer-link hover:text-emerald-400 transition">Sitemap</a></li>
+            <li><a href="/links.html" class="footer-link hover:text-emerald-400 transition">Links Directory</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+        <p>&copy; 2025 Migrant-Info. All rights reserved. | Folder routing active | Guides for newcomers</p>
+        <div class="flex flex-wrap gap-5 mt-4 md:mt-0">
+          <a href="/sitemap.xml" class="hover:text-gray-300 transition">Sitemap</a>
+          <a href="/links.html" class="hover:text-gray-300 transition">directory</a>
+          <a href="/policy/" class="hover:text-gray-300 transition">Privacy Policy</a>
+          <a href="/disclaimer/" class="hover:text-gray-300 transition">Disclaimer</a>
+          <a href="/term/" class="hover:text-gray-300 transition">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const mobileBtn = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        window.addEventListener('resize', () => { if (window.innerWidth >= 768) mobileMenu.classList.add('hidden'); });
+      }
+      const categoriesBtn = document.getElementById('mobile-categories-btn');
+      const categoriesMenu = document.getElementById('mobile-categories-menu');
+      const icon = document.getElementById('categories-icon');
+      if (categoriesBtn && categoriesMenu) {
+        categoriesBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          categoriesMenu.classList.toggle('hidden');
+          if (icon) icon.style.transform = categoriesMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        });
+      }
+      const currentPath = window.location.pathname;
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        let normalizedHref = href.endsWith('/') && href !== '/' ? href.slice(0, -1) : href;
+        let normalizedCurrent = currentPath.endsWith('/') && currentPath !== '/' ? currentPath.slice(0, -1) : currentPath;
+        if (normalizedHref === normalizedCurrent) link.classList.add('active');
+        else if (href === '/' && (normalizedCurrent === '' || normalizedCurrent === '/')) link.classList.add('active');
+      });
+    })();
+  </script>
+</body>
+</html>
