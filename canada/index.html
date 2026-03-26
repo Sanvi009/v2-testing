@@ -12,7 +12,7 @@
   <!-- ========== SOCIAL MEDIA PREVIEW (Open Graph / Twitter Card) ========== -->
   <meta property="og:title" content="Migrant-Info | Essential Resources for Newcomers">
   <meta property="og:description" content="Airport guides, settlement tips, country-specific information — everything you need for a smooth migration journey.">
-  <meta property="og:image" content="/ssss.preview">
+  <meta property="og:image" content="/ssss.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Migrant-Info | Essential Resources for Newcomers">
   <meta name="twitter:description" content="Airport guides, settlement tips, country-specific information — everything you need for a smooth migration journey.">
-  <meta name="twitter:image" content="/ssss.preview">
+  <meta name="twitter:image" content="/ssss.jpg">
   
   <!-- Google Fonts + Tailwind CSS + Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -91,21 +91,99 @@
     .footer-link:hover {
       color: #60a5fa;
     }
-    /* Content placeholder styling - empty but minimal */
+    /* Card styles - added without touching existing code */
+    .cards-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
+    }
+    @media (min-width: 640px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .resource-card {
+      background: white;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+      border: 1px solid rgba(229, 231, 235, 0.6);
+    }
+    .resource-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+      border-color: #e2e8f0;
+    }
+    .card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .resource-card:hover .card-img {
+      transform: scale(1.02);
+    }
+    .card-content {
+      padding: 1.5rem;
+    }
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .card-description {
+      color: #475569;
+      line-height: 1.55;
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #0f3b2c;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-bottom: 2px solid #cbd5e1;
+      padding-bottom: 2px;
+      transition: all 0.2s;
+    }
+    .card-link i {
+      font-size: 0.8rem;
+      transition: transform 0.2s;
+    }
+    .card-link:hover {
+      color: #0a5c44;
+      border-bottom-color: #0a5c44;
+    }
+    .card-link:hover i {
+      transform: translateX(4px);
+    }
+    /* keep placeholder hidden but ensure cards appear below nav */
     .content-placeholder {
-      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 3rem 1.5rem;
-      min-height: 50vh;
+      padding: 0;
+      min-height: auto;
     }
     .empty-state {
-      text-align: center;
-      opacity: 0;
-      pointer-events: none;
-      height: 0;
-      overflow: hidden;
+      display: none;
     }
   </style>
 </head>
@@ -191,10 +269,55 @@
     </div>
   </nav>
 
-  <!-- Simple placeholder content - completely empty per request (no visible text, no cards, just minimal structure) -->
-  <div class="content-placeholder">
-    <!-- Empty section as requested: no text, no graphics, just blank to keep main area empty -->
-    <div class="empty-state"></div>
+  <!-- ========== 3 CARDS SECTION (Canada Guides) ========== -->
+  <!-- Based on files: easiest-ways-to-immigrate-to-canada.html, how-to-get-canadian-citizenship.html, how-to-move-to-canada-from-usa.html -->
+  <!-- Images: 1.jpg, 2.jpg, 3.jpg located in /canada/ folder -->
+  <div class="cards-section">
+    <div class="card-grid">
+      
+      <!-- Card 1: Easiest Ways to Immigrate to Canada -->
+      <div class="resource-card">
+        <img class="card-img" src="/canada/1.jpg" alt="Canada immigration pathways and programs" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Canada+Guide'">
+        <div class="card-content">
+          <h3 class="card-title">Easiest Ways to Immigrate to Canada</h3>
+          <p class="card-description">
+            Discover the simplest and most effective immigration pathways to Canada in 2025. From Express Entry and Provincial Nominee Programs to family sponsorship, this guide outlines eligibility, processing times, and insider tips to boost your application success.
+          </p>
+          <a href="/canada/easiest-ways-to-immigrate-to-canada.html" class="card-link">
+            Read full guide <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Card 2: How to Get Canadian Citizenship -->
+      <div class="resource-card">
+        <img class="card-img" src="/canada/2.jpg" alt="Canadian citizenship ceremony and requirements" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Citizenship+Guide'">
+        <div class="card-content">
+          <h3 class="card-title">How to Get Canadian Citizenship</h3>
+          <p class="card-description">
+            Step-by-step roadmap to becoming a Canadian citizen. Learn about permanent residency requirements, physical presence calculations, language tests, citizenship application process, and the final oath ceremony. Your ultimate guide to the maple leaf.
+          </p>
+          <a href="/canada/how-to-get-canadian-citizenship.html" class="card-link">
+            Read full guide <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Card 3: How to Move to Canada from USA -->
+      <div class="resource-card">
+        <img class="card-img" src="/canada/3.jpg" alt="Moving from USA to Canada cross-border relocation" onerror="this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=USA+to+Canada'">
+        <div class="card-content">
+          <h3 class="card-title">How to Move to Canada from USA</h3>
+          <p class="card-description">
+            Comprehensive relocation guide for Americans moving to Canada. Covers work permits, study permits, permanent residence via CUSMA professionals, tax implications, healthcare enrollment, housing, and cultural transition essentials for a smooth move north.
+          </p>
+          <a href="/canada/how-to-move-to-canada-from-usa.html" class="card-link">
+            Read full guide <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+    </div>
   </div>
 
   <!-- ========== FOOTER ========== (all links pointing to folder/index.html structure, updated brand references from NovaCore to Migrant-Info) -->
