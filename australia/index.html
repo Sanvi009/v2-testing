@@ -91,21 +91,33 @@
     .footer-link:hover {
       color: #60a5fa;
     }
-    /* Content placeholder styling - empty but minimal */
+    /* original placeholder style kept but we will improve card alignment */
     .content-placeholder {
       flex: 1;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      padding: 3rem 1.5rem;
+      padding: 2rem 1rem;
       min-height: 50vh;
     }
+    /* no empty-state hiding anymore, now cards visible */
     .empty-state {
-      text-align: center;
-      opacity: 0;
-      pointer-events: none;
-      height: 0;
-      overflow: hidden;
+      display: none;
+    }
+  </style>
+  <!-- additional fine-tuning for cards and responsive behaviour -->
+  <style>
+    .card-link {
+      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    }
+    .card-link:hover {
+      transform: translateY(-6px);
+    }
+    .card-image {
+      transition: transform 0.4s ease;
+    }
+    .card-link:hover .card-image {
+      transform: scale(1.02);
     }
   </style>
 </head>
@@ -191,10 +203,77 @@
     </div>
   </nav>
 
-  <!-- Simple placeholder content - completely empty per request (no visible text, no cards, just minimal structure) -->
+  <!-- ========== CARD SECTION: 3 interactive cards (Australia guides) ========== -->
+  <!-- original .content-placeholder now contains the new cards grid (completely replaces empty placeholder) -->
   <div class="content-placeholder">
-    <!-- Empty section as requested: no text, no graphics, just blank to keep main area empty -->
-    <div class="empty-state"></div>
+    <div class="max-w-7xl mx-auto w-full">
+      <!-- subtle heading for context, does not interfere with existing design -->
+      <div class="text-center mb-10 md:mb-12">
+        <span class="inline-block px-4 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold tracking-wide uppercase">Australia guides</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-3">Insider resources for your move</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto mt-2">Practical insights, travel tips, and real-talk about settling Down Under</p>
+      </div>
+      
+      <!-- 3‑card responsive grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        
+        <!-- CARD 1: 17 things tourists should know before visiting Australia -->
+        <a href="/australia/17-things-tourists-should-know-before-visiting-australia.html" class="card-link group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 no-underline">
+          <div class="relative overflow-hidden bg-gray-100 h-56">
+            <img src="/australia/1.jpg" alt="Scenic Australian coastline and Sydney Opera House view" class="card-image w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 text-xs text-emerald-600 font-semibold uppercase tracking-wide mb-2">
+              <i class="fas fa-umbrella-beach"></i> <span>traveler essentials</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-emerald-700 transition">17 Things Tourists Should Know Before Visiting Australia</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">From beach safety and wildlife encounters to tipping culture and long distances — everything first‑timers must know for a smooth Australian adventure.</p>
+            <div class="mt-4 flex items-center text-emerald-600 text-sm font-medium">
+              <span>Read guide</span>
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </a>
+        
+        <!-- CARD 2: Pros and Cons of Moving to Australia -->
+        <a href="/australia/pros-and-cons-of-moving-to-australia.html" class="card-link group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 no-underline">
+          <div class="relative overflow-hidden bg-gray-100 h-56">
+            <img src="/australia/2.jpg" alt="Melbourne city skyline with modern architecture" class="card-image w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 text-xs text-emerald-600 font-semibold uppercase tracking-wide mb-2">
+              <i class="fas fa-scale-balanced"></i> <span>relocation insights</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-emerald-700 transition">Pros and Cons of Moving to Australia</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Outdoor lifestyle, strong economy vs. housing affordability, isolation and visa complexity. Weigh the real factors before making the leap.</p>
+            <div class="mt-4 flex items-center text-emerald-600 text-sm font-medium">
+              <span>Explore pros & cons</span>
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </a>
+        
+        <!-- CARD 3: Why Living in Australia is Impossible -->
+        <a href="/australia/why-living-in-australia-is-impossible.html" class="card-link group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 no-underline">
+          <div class="relative overflow-hidden bg-gray-100 h-56">
+            <img src="/australia/3.jpg" alt="Sydney housing and urban landscape with high density apartments" class="card-image w-full h-full object-cover transition duration-500 group-hover:scale-105">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 text-xs text-emerald-600 font-semibold uppercase tracking-wide mb-2">
+              <i class="fas fa-face-smile-wink"></i> <span>honest reality</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-emerald-700 transition">Why Living in Australia Is Impossible</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">A witty, no‑filter guide to skyrocketing rent, competitive job market, and hidden costs — plus tips to survive and thrive regardless.</p>
+            <div class="mt-4 flex items-center text-emerald-600 text-sm font-medium">
+              <span>Uncover the truth</span>
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- subtle extra spacing to harmonize with footer -->
+      <div class="mt-8 text-center text-gray-400 text-xs">🇦🇺 Trusted by newcomers — up‑to‑date country resources</div>
+    </div>
   </div>
 
   <!-- ========== FOOTER ========== (all links pointing to folder/index.html structure, updated brand references from NovaCore to Migrant-Info) -->
@@ -323,7 +402,7 @@
       });
       
       // Small console note for developers understanding folder structure and new country routing
-      console.log('Migrant-Info: Navigation ready | Destinations: /united-state/, /united-kingdom/, /canada/, /australia/, /germany/ (each folder with index.html) | All NovaCore references replaced.');
+      console.log('Migrant-Info: Navigation ready | Destinations: /united-state/, /united-kingdom/, /canada/, /australia/, /germany/ (each folder with index.html) | 3 Australia insight cards added.');
     })();
   </script>
 </body>
