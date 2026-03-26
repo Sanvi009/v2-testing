@@ -12,7 +12,7 @@
   <!-- ========== SOCIAL MEDIA PREVIEW (Open Graph / Twitter Card) ========== -->
   <meta property="og:title" content="Migrant-Info | Essential Resources for Newcomers">
   <meta property="og:description" content="Airport guides, settlement tips, country-specific information — everything you need for a smooth migration journey.">
-  <meta property="og:image" content="/ssss.preview">
+  <meta property="og:image" content="/ssss.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Migrant-Info | Essential Resources for Newcomers">
   <meta name="twitter:description" content="Airport guides, settlement tips, country-specific information — everything you need for a smooth migration journey.">
-  <meta name="twitter:image" content="/ssss.preview">
+  <meta name="twitter:image" content="/ssss.jpg">
   
   <!-- Google Fonts + Tailwind CSS + Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -91,21 +91,68 @@
     .footer-link:hover {
       color: #60a5fa;
     }
-    /* Content placeholder styling - empty but minimal */
-    .content-placeholder {
+    /* Content placeholder styling - 4 cards grid */
+    .content-cards {
       flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      max-width: 1280px;
+      margin: 0 auto;
       padding: 3rem 1.5rem;
-      min-height: 50vh;
+      width: 100%;
     }
-    .empty-state {
-      text-align: center;
-      opacity: 0;
-      pointer-events: none;
-      height: 0;
+    .card {
+      background: white;
+      border-radius: 1.25rem;
       overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.12);
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+    .card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .card:hover .card-img {
+      transform: scale(1.02);
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      color: #1e293b;
+      letter-spacing: -0.01em;
+    }
+    .card-desc {
+      color: #475569;
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #10b981;
+      transition: gap 0.2s ease;
+    }
+    .card-link i {
+      font-size: 0.8rem;
+    }
+    .card-link:hover {
+      gap: 0.75rem;
+      color: #059669;
+    }
+    @media (max-width: 640px) {
+      .content-cards {
+        padding: 2rem 1rem;
+      }
     }
   </style>
 </head>
@@ -191,10 +238,59 @@
     </div>
   </nav>
 
-  <!-- Simple placeholder content - completely empty per request (no visible text, no cards, just minimal structure) -->
-  <div class="content-placeholder">
-    <!-- Empty section as requested: no text, no graphics, just blank to keep main area empty -->
-    <div class="empty-state"></div>
+  <!-- ========== 4 CARDS SECTION ========== -->
+  <div class="content-cards">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      
+      <!-- Card 1: 10-usa-work-visa-types.html -->
+      <div class="card group">
+        <img class="card-img" src="/united-state/1.jpg" alt="US work visa types overview" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=US+Visa'">
+        <div class="p-5">
+          <h3 class="card-title mb-2">10 USA Work Visa Types</h3>
+          <p class="card-desc mb-4">Comprehensive guide to H-1B, L-1, O-1, EB visas & more. Discover eligibility, application steps, and which path fits your career goals in America.</p>
+          <a href="/united-state/10-usa-work-visa-types.html" class="card-link">
+            Read more <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Card 2: american-culture-you-need-to-know.html -->
+      <div class="card group">
+        <img class="card-img" src="/united-state/2.jpg" alt="American culture insights" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=US+Culture'">
+        <div class="p-5">
+          <h3 class="card-title mb-2">American Culture: You Need to Know</h3>
+          <p class="card-desc mb-4">From social etiquette and regional diversity to holidays and workplace norms. Essential cultural insights to help you adapt and thrive in the United States.</p>
+          <a href="/united-state/american-culture-you-need-to-know.html" class="card-link">
+            Read more <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Card 3: things-to-know-before-moving-to-the-u.s.html -->
+      <div class="card group">
+        <img class="card-img" src="/united-state/3.jpg" alt="Before moving to USA essentials" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Moving+Tips'">
+        <div class="p-5">
+          <h3 class="card-title mb-2">Things to Know Before Moving to the U.S.</h3>
+          <p class="card-desc mb-4">Banking setup, health insurance, housing, transportation, and legal paperwork. Practical checklist to avoid surprises and settle smoothly in America.</p>
+          <a href="/united-state/things-to-know-before-moving-to-the-u.s.html" class="card-link">
+            Read more <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Card 4: ways-to-become-us-citizen.html -->
+      <div class="card group">
+        <img class="card-img" src="/united-state/4.jpg" alt="US citizenship pathways" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=US+Citizenship'">
+        <div class="p-5">
+          <h3 class="card-title mb-2">Ways to Become a U.S. Citizen</h3>
+          <p class="card-desc mb-4">Naturalization process, eligibility requirements, citizenship test, marriage-based routes, and military service. Your step-by-step roadmap to the American dream.</p>
+          <a href="/united-state/ways-to-become-us-citizen.html" class="card-link">
+            Read more <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+    </div>
   </div>
 
   <!-- ========== FOOTER ========== (all links pointing to folder/index.html structure, updated brand references from NovaCore to Migrant-Info) -->
