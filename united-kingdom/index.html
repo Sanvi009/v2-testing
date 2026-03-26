@@ -12,7 +12,7 @@
   <!-- ========== SOCIAL MEDIA PREVIEW (Open Graph / Twitter Card) ========== -->
   <meta property="og:title" content="Migrant-Info | Essential Resources for Newcomers">
   <meta property="og:description" content="Airport guides, settlement tips, country-specific information — everything you need for a smooth migration journey.">
-  <meta property="og:image" content="/ssss.preview">
+  <meta property="og:image" content="/ssss.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Migrant-Info | Essential Resources for Newcomers">
   <meta name="twitter:description" content="Airport guides, settlement tips, country-specific information — everything you need for a smooth migration journey.">
-  <meta name="twitter:image" content="/ssss.preview">
+  <meta name="twitter:image" content="/ssss.jpg">
   
   <!-- Google Fonts + Tailwind CSS + Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -91,21 +91,68 @@
     .footer-link:hover {
       color: #60a5fa;
     }
-    /* Content placeholder styling - empty but minimal */
-    .content-placeholder {
+    /* Cards styling */
+    .cards-container {
       flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      max-width: 1280px;
+      margin: 0 auto;
       padding: 3rem 1.5rem;
-      min-height: 50vh;
+      width: 100%;
     }
-    .empty-state {
-      text-align: center;
-      opacity: 0;
-      pointer-events: none;
-      height: 0;
+    .card {
+      background: white;
+      border-radius: 1.25rem;
       overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.12);
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+    .card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .card:hover .card-img {
+      transform: scale(1.02);
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      color: #1e293b;
+      letter-spacing: -0.01em;
+    }
+    .card-desc {
+      color: #475569;
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #10b981;
+      transition: gap 0.2s ease;
+    }
+    .card-link i {
+      font-size: 0.8rem;
+    }
+    .card-link:hover {
+      gap: 0.75rem;
+      color: #059669;
+    }
+    @media (max-width: 640px) {
+      .cards-container {
+        padding: 2rem 1rem;
+      }
     }
   </style>
 </head>
@@ -191,10 +238,35 @@
     </div>
   </nav>
 
-  <!-- Simple placeholder content - completely empty per request (no visible text, no cards, just minimal structure) -->
-  <div class="content-placeholder">
-    <!-- Empty section as requested: no text, no graphics, just blank to keep main area empty -->
-    <div class="empty-state"></div>
+  <!-- ========== 2 CARDS SECTION (UNITED KINGDOM) ========== -->
+  <div class="cards-container">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      
+      <!-- Card 1: different-types-of-visas-in-the-uk.html -->
+      <div class="card group">
+        <img class="card-img" src="/united-kingdom/1.jpg" alt="UK visa types guide" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=UK+Visas'">
+        <div class="p-5">
+          <h3 class="card-title mb-2">Different Types of Visas in the UK</h3>
+          <p class="card-desc mb-4">Explore Skilled Worker, Student, Family, Health & Care, Global Talent, and Innovator visas. Complete breakdown of requirements, sponsorship, and pathways to settlement.</p>
+          <a href="/united-kingdom/different-types-of-visas-in-the-uk.html" class="card-link">
+            Read more <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Card 2: why-living-in-london-has-become-impossible.html -->
+      <div class="card group">
+        <img class="card-img" src="/united-kingdom/2.jpg" alt="London living challenges" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=London+Housing'">
+        <div class="p-5">
+          <h3 class="card-title mb-2">Why Living in London Has Become Impossible</h3>
+          <p class="card-desc mb-4">Rising rent crisis, cost of living, transport costs, housing shortages, and wage stagnation. An honest look at the realities newcomers face in the UK capital.</p>
+          <a href="/united-kingdom/why-living-in-london-has-become-impossible.html" class="card-link">
+            Read more <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+    </div>
   </div>
 
   <!-- ========== FOOTER ========== (all links pointing to folder/index.html structure, updated brand references from NovaCore to Migrant-Info) -->
