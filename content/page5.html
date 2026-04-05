@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Gallery - Page 5 | AI Prompts for Image Generation</title>
+    <meta name="description" content="Browse AI prompts for creative image generation. Page 5 of 19. Find inspiration for your next AI artwork.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/png" href="/asset/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #fafbfd;
+            color: #1e2532;
+            line-height: 1.4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px -6px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+            padding: 0.6rem 2.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eef0f5;
+        }
+
+        .logo a {
+            font-weight: 630;
+            font-size: 1.55rem;
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, #1f2937 0%, #1e293b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .logo span {
+            background: linear-gradient(145deg, #2563eb, #4f7df3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.9rem;
+            line-height: 1;
+            margin-right: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .nav-links a, .dropbtn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.96rem;
+            font-weight: 500;
+            color: #334155;
+            text-decoration: none;
+            border-radius: 60px;
+            transition: all 0.18s ease;
+            white-space: nowrap;
+            border: 1px solid transparent;
+        }
+
+        .nav-links a:hover, .dropdown:hover .dropbtn {
+            background: #ffffff;
+            border-color: #e2e8f0;
+            box-shadow: 0 6px 14px -8px rgba(37,99,235,0.2);
+            color: #0f172a;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: inherit;
+            font-size: 0.96rem;
+            font-weight: 500;
+            color: #334155;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid transparent;
+        }
+
+        .dropbtn i {
+            font-size: 0.7rem;
+            color: #5f6c80;
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .dropdown:hover .dropbtn i {
+            transform: rotate(180deg);
+            color: #2563eb;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            left: auto;
+            background: #ffffff;
+            min-width: 220px;
+            border-radius: 24px;
+            padding: 0.6rem 0;
+            box-shadow: 0 25px 45px -14px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.02), 0 8px 20px -12px rgba(37,99,235,0.15);
+            border: 1px solid #edeff2;
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+            background: rgba(255,255,255,0.98);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.7rem 1.7rem;
+            color: #2d3a4f;
+            background: transparent;
+            white-space: nowrap;
+            font-weight: 460;
+            border-left: 3px solid transparent;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .dropdown-content a:hover {
+            background: #f6f8fc;
+            border-left-color: #2563eb;
+            color: #0f1c33;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeSlide 0.18s ease;
+        }
+
+        @keyframes fadeSlide {
+            0% { opacity: 0; transform: translateY(-6px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .menu-toggle {
+            display: none;
+            background: white;
+            border: 1px solid #dee3ea;
+            border-radius: 60px;
+            padding: 0.45rem 1.4rem;
+            font-size: 0.95rem;
+            font-weight: 480;
+            cursor: pointer;
+            color: #2b3b52;
+            transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .menu-toggle i {
+            margin-right: 6px;
+            color: #4a5b73;
+        }
+
+        .menu-toggle:hover {
+            background: #f9fcff;
+            border-color: #b7c3d4;
+            box-shadow: 0 6px 12px -10px #2563eb;
+        }
+
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .masonry-grid {
+            column-count: 4;
+            column-gap: 1.5rem;
+        }
+
+        .card {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            display: block;
+            background: #f0f2f5;
+        }
+
+        .card-content {
+            padding: 1rem 1.2rem 1.2rem;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #2c3e4e;
+            margin-bottom: 1rem;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+        .copy-btn {
+            background: #f0f4fa;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #2563eb;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+            font-family: inherit;
+        }
+
+        .copy-btn i {
+            font-size: 0.75rem;
+        }
+
+        .copy-btn:hover {
+            background: #e6edf8;
+            color: #1d4ed8;
+        }
+
+        .copy-btn.copied {
+            background: #2563eb;
+            color: white;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+            padding: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .pagination a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 40px;
+            height: 40px;
+            padding: 0 0.75rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            color: #334155;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.15s ease;
+        }
+
+        .pagination a:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #1e293b;
+        }
+
+        .pagination .active {
+            background: #2563eb;
+            border-color: #2563eb;
+            color: white;
+        }
+
+        .pagination .ellipsis {
+            color: #94a3b8;
+            pointer-events: none;
+            background: transparent;
+            border: none;
+        }
+
+        .footer {
+            background: #ffffff;
+            border-top: 1px solid #edf0f5;
+            padding: 0.5rem 2rem;
+            font-size: 0.8rem;
+            color: #5a687c;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.01);
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1300px;
+            margin: 0 auto;
+            gap: 0.3rem 1rem;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem 1.8rem;
+        }
+
+        .footer-site-name {
+            font-weight: 620;
+            font-size: 1.0rem;
+            letter-spacing: -0.01em;
+            color: #1f2a41;
+            background: linear-gradient(135deg, #202937, #19212e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            white-space: nowrap;
+            margin-right: 0.5rem;
+        }
+
+        .footer-nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem 1.6rem;
+        }
+
+        .footer-nav-links a {
+            color: #657386;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 480;
+            transition: color 0.15s;
+            white-space: nowrap;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+        }
+
+        .footer-nav-links a:hover {
+            color: #1b263b;
+            border-bottom-color: #a7b5cc;
+        }
+
+        .footer-right {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: #5f6e86;
+            font-size: 1.0rem;
+            transition: color 0.2s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 60px;
+            background: #f3f6fb;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #1f2a44;
+            background: #e6ecf5;
+            transform: scale(1.03);
+        }
+
+        .footer-extra-compact {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-left: 1px solid #dde2ea;
+            padding-left: 1rem;
+        }
+
+        .footer-extra-compact a {
+            color: #5f6e86;
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 470;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            white-space: nowrap;
+            background: #f3f6fb;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            transition: background 0.15s;
+        }
+
+        .footer-extra-compact a i {
+            font-size: 0.65rem;
+            opacity: 0.7;
+        }
+
+        .footer-extra-compact a:hover {
+            background: #e0e7f2;
+            color: #1a253b;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .masonry-grid { column-count: 3; }
+        }
+
+        @media screen and (max-width: 800px) {
+            .masonry-grid { column-count: 2; }
+            main { padding: 1.5rem 1rem; }
+            .navbar { padding: 0.5rem 1.2rem; }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                background: #ffffff;
+                padding: 1.2rem 0.6rem 0.9rem 0.6rem;
+                gap: 0.4rem;
+                border-top: 1px solid #eceff4;
+                margin-top: 0.5rem;
+                border-radius: 28px;
+                box-shadow: inset 0 6px 12px -12px rgba(0,0,0,0.1);
+            }
+            .nav-links.show { display: flex; }
+            .menu-toggle { display: inline-flex; align-items: center; }
+            .dropdown { width: 100%; }
+            .dropbtn {
+                width: 100%;
+                justify-content: space-between;
+                background: #f6f9fe;
+                border-radius: 40px;
+                padding: 0.7rem 1.3rem;
+                border: 1px solid #e5eaf0;
+            }
+            .dropdown-content {
+                position: static;
+                right: auto;
+                left: auto;
+                box-shadow: none;
+                border: none;
+                background: #f1f5fc;
+                border-radius: 24px;
+                margin: 0.4rem 0 0.2rem 1rem;
+                padding: 0.5rem 0;
+                width: calc(100% - 1.8rem);
+                min-width: auto;
+                backdrop-filter: none;
+            }
+            .dropdown:hover .dropdown-content { display: none; }
+            .dropdown.active .dropdown-content { display: block !important; animation: fadeSlide 0.18s ease; }
+        }
+
+        @media screen and (max-width: 550px) {
+            .masonry-grid { column-count: 1; }
+            .card-content { padding: 0.8rem 1rem 1rem; }
+            .card-text { font-size: 0.85rem; }
+        }
+
+        @media screen and (max-width: 900px) {
+            .footer { padding: 0.15rem 0.6rem; }
+            .footer-content { flex-direction: column; align-items: stretch; gap: 0.1rem; }
+            .footer-left { width: 100%; display: block; }
+            .footer-site-name { font-size: 1.1rem; display: block; line-height: 1.1; margin: 0.1rem 0 0 0; }
+            .footer-left .footer-nav-links { display: none; }
+            .footer-right { width: 100%; flex-direction: column; align-items: flex-start; gap: 0.1rem; margin-top: 0; }
+            .mobile-nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.15rem 0.4rem; width: 100%; line-height: 1; }
+            .mobile-nav-links a { color: #5a6b82; text-decoration: none; font-size: 0.6rem; font-weight: 470; white-space: nowrap; padding: 0 0.1rem; border-bottom: 1px solid transparent; transition: color 0.15s; }
+            .mobile-nav-links a:hover { color: #1d2a40; border-bottom-color: #9aabbf; }
+            .social-links { gap: 0.1rem; }
+            .social-links a { width: 1.25rem; height: 1.25rem; font-size: 0.65rem; background: #f0f4fc; }
+            .footer-extra-compact { border-left: none; padding-left: 0; gap: 0.2rem; }
+            .footer-extra-compact a { font-size: 0.58rem; padding: 0.05rem 0.4rem; background: #f0f4fc; line-height: 1.2; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/"><span>◈</span> promptgalary</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="menu"><i class="fas fa-bars"></i> Menu</button>
+        <div class="nav-links" id="navLinks">
+            <a href="/">Home</a>
+            <a href="/prompts">Prompts</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <div class="dropdown" id="legalDropdown">
+                <button class="dropbtn">Legal <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="/policy/">Privacy policy</a>
+                    <a href="/term/">Terms of service</a>
+                    <a href="/disclaimer/">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="masonry-grid">
+            <!-- Card 81 -->
+            <div class="card">
+                <img class="card-img" src="/images/76.jpeg" alt="Square leather patch embossed with logo" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">"Generate a 1:1 image. A close-up of a square leather patch embossed with [LOGO]. The leather has a natural grain texture and comes in a rich [COLOR] tone. Around the patch, fine stitching in [THREAD COLOR] outlines the edges. Subtle embossed decorative motifs (such as leaves, flames, waves, or runes depending on theme) blend naturally into the leather, enhancing the fantasy style. The logo should look seamlessly pressed into the leather, not glowing or floating, fully integrated as part of the material. Lighting is soft and even, highlighting realistic depth, texture, and craftsmanship. Background is the same leather surface for consistency."</p>
+                    <button class="copy-btn" data-prompt="Generate a 1:1 image. A close-up of a square leather patch embossed with [LOGO]. The leather has a natural grain texture and comes in a rich [COLOR] tone. Around the patch, fine stitching in [THREAD COLOR] outlines the edges. Subtle embossed decorative motifs (such as leaves, flames, waves, or runes depending on theme) blend naturally into the leather, enhancing the fantasy style. The logo should look seamlessly pressed into the leather, not glowing or floating, fully integrated as part of the material. Lighting is soft and even, highlighting realistic depth, texture, and craftsmanship. Background is the same leather surface for consistency."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 82 -->
+            <div class="card">
+                <img class="card-img" src="/images/11.jpeg" alt="Mandazi donuts on brass tray with chai" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">Food Prompt:\n\nLifestyle shot of golden-brown mandazi (Swahili donuts) piled on a brass tray, powdered sugar dusted unevenly. A glass cup of spiced chai sits beside it, cinnamon sticks and cardamom pods floating atop. Background: a weathered Swahili door with peeling paint. Morning light spills across the scene, casting delicate shadows. Shot at f/2.2 to blur the background, with condensation on the chai glass. Leica M11 realism.               .Drink Prompt:\n\nExtreme close-up of a freshly brewed cup of Kenyan AA coffee in a handmade clay mug. Crema swirls on the surface, with a coffee bean floating. Side elements: a burlap sack of beans spilling open, a vintage grinder. Dark moody lighting, single spotlight (f/4.5). Shot with a macro lens to capture steam curls and oil sheen.</p>
+                    <button class="copy-btn" data-prompt="Food Prompt: Lifestyle shot of golden-brown mandazi (Swahili donuts) piled on a brass tray, powdered sugar dusted unevenly. A glass cup of spiced chai sits beside it, cinnamon sticks and cardamom pods floating atop. Background: a weathered Swahili door with peeling paint. Morning light spills across the scene, casting delicate shadows. Shot at f/2.2 to blur the background, with condensation on the chai glass. Leica M11 realism. Drink Prompt: Extreme close-up of a freshly brewed cup of Kenyan AA coffee in a handmade clay mug. Crema swirls on the surface, with a coffee bean floating. Side elements: a burlap sack of beans spilling open, a vintage grinder. Dark moody lighting, single spotlight (f/4.5). Shot with a macro lens to capture steam curls and oil sheen."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 83 -->
+            <div class="card">
+                <img class="card-img" src="/images/96.jpeg" alt="Silk velvet threads fabric design" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">— soft silk or velvet threads forming its exact shape with realistic folds, seams, and fine fiber details. The surface should look elegant and tactile, with subtle sheen and depth, as though handcrafted by haute couture artisans. Render it in Cinema 4D hyper-realistic style, with soft editorial lighting that highlights fabric texture and shadow play. The background should be clean and minimal (white, gray, or gradient), giving the piece a high-fashion collectible look.</p>
+                    <button class="copy-btn" data-prompt="soft silk or velvet threads forming its exact shape with realistic folds, seams, and fine fiber details. The surface should look elegant and tactile, with subtle sheen and depth, as though handcrafted by haute couture artisans. Render it in Cinema 4D hyper-realistic style, with soft editorial lighting that highlights fabric texture and shadow play. The background should be clean and minimal (white, gray, or gradient), giving the piece a high-fashion collectible look."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 84 -->
+            <div class="card">
+                <img class="card-img" src="/images/34.jpeg" alt="Noir Velvet Tuxedo Blazer" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">[Regal Threads] [Noir Velvet Tuxedo Blazer] crafted from [premium black velvet] with [sleek satin shawl lapels] and [tailored slim-fit silhouette] that radiates refined luxury. Displayed against a [deep wine-red gradient background] to evoke a rich, opulent atmosphere, illuminated with [moody directional spotlight] that enhances the depth of velvet texture and lapel sheen. Positioned on a [polished dark walnut surface] for a warm yet upscale contrast.Captured from a [45-degree front angle] to highlight the elegant curve of the lapels and the precise tailoring of the blazer's cut, with [shallow depth of field] ensuring [sharp subject focus] while softly blurring the rich background. The mood is [intense], [luxurious], and [high-fashion editorial], perfect for a [formalwear luxury ad campaign] and [premium menswear e-commerce display].The [style] is [luxury studio fashion photography] with an emphasis on texture, contrast, and timeless elegance.</p>
+                    <button class="copy-btn" data-prompt="[Regal Threads] [Noir Velvet Tuxedo Blazer] crafted from [premium black velvet] with [sleek satin shawl lapels] and [tailored slim-fit silhouette] that radiates refined luxury. Displayed against a [deep wine-red gradient background] to evoke a rich, opulent atmosphere, illuminated with [moody directional spotlight] that enhances the depth of velvet texture and lapel sheen. Positioned on a [polished dark walnut surface] for a warm yet upscale contrast.Captured from a [45-degree front angle] to highlight the elegant curve of the lapels and the precise tailoring of the blazer's cut, with [shallow depth of field] ensuring [sharp subject focus] while softly blurring the rich background. The mood is [intense], [luxurious], and [high-fashion editorial], perfect for a [formalwear luxury ad campaign] and [premium menswear e-commerce display].The [style] is [luxury studio fashion photography] with an emphasis on texture, contrast, and timeless elegance."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 85 -->
+            <div class="card">
+                <img class="card-img" src="/images/23.jpeg" alt="Beverage can on dark wooden table" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">A luxurious 8K food photography image in 3:4 aspect ratio. A can of [beverage brand] is styled for a high-end restaurant photo shoot. The can sits on a polished dark wooden table with soft ambient lighting. Behind it, a blurred fine-dining setting with elegant tableware, a folded white linen napkin, and subtle gold accents. Studio lighting highlights the glossy texture of the can, with condensation droplets for a cold, refreshing effect. Shallow depth of field, cinematic focus, and a warm, sophisticated tone evoke luxury and nostalgia. Perfect for a high-end beverage campaign.</p>
+                    <button class="copy-btn" data-prompt="A luxurious 8K food photography image in 3:4 aspect ratio. A can of [beverage brand] is styled for a high-end restaurant photo shoot. The can sits on a polished dark wooden table with soft ambient lighting. Behind it, a blurred fine-dining setting with elegant tableware, a folded white linen napkin, and subtle gold accents. Studio lighting highlights the glossy texture of the can, with condensation droplets for a cold, refreshing effect. Shallow depth of field, cinematic focus, and a warm, sophisticated tone evoke luxury and nostalgia. Perfect for a high-end beverage campaign."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 86 -->
+            <div class="card">
+                <img class="card-img" src="/images/52.jpeg" alt="Shower gel bottle on stone in moss" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">A photograph captures a luxuryshower gel bottle, "tranform", resting serenely on a grey ston in a bed of moss. The bottle itself is a delicate shade of dusty yellow, its silver cap etched with an intricate honeycomb pattern that reflects the diffused light. Surrounding the bottle are a few scattered, yellow orange wildflowers and the texture of ancient bark from a nearby, gnarled oak tree creates a rustic backdrop.Soft, golden light filters through the forest canopy, creating a gentle bokeh effect and a tranquil, dreamlike atmosphere.</p>
+                    <button class="copy-btn" data-prompt="A photograph captures a luxuryshower gel bottle, "tranform", resting serenely on a grey ston in a bed of moss. The bottle itself is a delicate shade of dusty yellow, its silver cap etched with an intricate honeycomb pattern that reflects the diffused light. Surrounding the bottle are a few scattered, yellow orange wildflowers and the texture of ancient bark from a nearby, gnarled oak tree creates a rustic backdrop.Soft, golden light filters through the forest canopy, creating a gentle bokeh effect and a tranquil, dreamlike atmosphere."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 87 -->
+            <div class="card">
+                <img class="card-img" src="/images/61.jpeg" alt="Macro cinematic study frosted textures" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">Macro cinematic study of [subject matter], extreme close-up with frosted textures and crystalline details clinging to surfaces. Ambient cold light glints across their iconic clothing and skin, highlighting condensation and fine ice grains. Composition emphasizes tactile surfaces with sharp depth of field contrast, one area hyper detailed, the rest falling into a soft blur.\n\nStyle Keywords: Vogue macro editorial, hyperreal textures, atmospheric cold tones, surreal tactile focus\n\nColor Palette: natural skin tones with crystalline accents (avoid heavy monochrome blue)\n\nCamera + Light: macro lens with shallow depth, cinematic cool lighting with balanced neutrals, crisp highlights and soft diffused shadows\n\nMood: intimate, stark, fragile, textural study\n\nFilm + Post: high contrast grading, light film grain, faint halation around highlights, subtle digital noise</p>
+                    <button class="copy-btn" data-prompt="Macro cinematic study of [subject matter], extreme close-up with frosted textures and crystalline details clinging to surfaces. Ambient cold light glints across their iconic clothing and skin, highlighting condensation and fine ice grains. Composition emphasizes tactile surfaces with sharp depth of field contrast, one area hyper detailed, the rest falling into a soft blur. Style Keywords: Vogue macro editorial, hyperreal textures, atmospheric cold tones, surreal tactile focus. Color Palette: natural skin tones with crystalline accents (avoid heavy monochrome blue). Camera + Light: macro lens with shallow depth, cinematic cool lighting with balanced neutrals, crisp highlights and soft diffused shadows. Mood: intimate, stark, fragile, textural study. Film + Post: high contrast grading, light film grain, faint halation around highlights, subtle digital noise"><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 88 -->
+            <div class="card">
+                <img class="card-img" src="/images/39.jpeg" alt="Cybernetic Emoji transparent exoskeleton" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">Create a hyperrealistic macro photograph [1:1] aspect ratio of a transparent cybernetic Emoji]. captured in extreme close-up. Its exoskeleton is sculpted from clear. glass-like polymers. revealing a mesmerizing inner world of Color glowing micro-LEDs, nano-scale circuit boards, and ultra-fine mechanical filaments. Intricate gold. silver. and chrome-plated components are embedded throughout its body. reflecting ambient light with refined metallic sheen. Employ stylish soft cinematography lighting to emphasize internal glows. crystalline reflections. and elegant light refractions. The composition should showcase clean lines and precision engineered aesthetics-strictly high-tech, with no organic textures. A minimal dark pastel background paired with a shallow depth of field enhances the sense of scale. while delicate bokeh adds atmosphere and draws focus to the shimmering. futuristic anatomy. Stylish perspective and half-turn viewing angle.</p>
+                    <button class="copy-btn" data-prompt="Create a hyperrealistic macro photograph [1:1] aspect ratio of a transparent cybernetic Emoji]. captured in extreme close-up. Its exoskeleton is sculpted from clear. glass-like polymers. revealing a mesmerizing inner world of Color glowing micro-LEDs, nano-scale circuit boards, and ultra-fine mechanical filaments. Intricate gold. silver. and chrome-plated components are embedded throughout its body. reflecting ambient light with refined metallic sheen. Employ stylish soft cinematography lighting to emphasize internal glows. crystalline reflections. and elegant light refractions. The composition should showcase clean lines and precision engineered aesthetics-strictly high-tech, with no organic textures. A minimal dark pastel background paired with a shallow depth of field enhances the sense of scale. while delicate bokeh adds atmosphere and draws focus to the shimmering. futuristic anatomy. Stylish perspective and half-turn viewing angle."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 89 -->
+            <div class="card">
+                <img class="card-img" src="/images/72.jpeg" alt="Man running Kuala Lumpur plane crash" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">"Create an ultra-realistic (hyper-realistic) dramatic scene, frozen in time, of the person from the attached image, running ahead on a street in central Kuala Lumpur, Malaysia. He has a shocked and surprised facial expression with wide-open eyes and an open mouth. The man is very muscular and has a well-trained physique, he is wearing a short-sleeved Hawaiian shirt (vibrant white/orange palm print) and shorts in the same pattern, billowing violently from the fast wind from running. Behind him, an Airbus A320 from Virgin Atlantic is about to crash into the ground with the nose pointing diagonally downwards. Both of the aircraft engines is burning heavily and strong flames are shooting out from it. In the background, the Petrona Twin Towers are visible, where one of the towers is burning heavily and the middle walkway between the towers is about to collapse to the ground. Several skyscrapers along the path where the man is running are burning on different floors and there is a lot of debris flying to the ground, - capture the moment when a helicopter dramatically crashes into a skyscraper and explodes dramatically, a big massive fireball and smoke plume is created that illuminates the stage with orange and red light. All the mighty skyscrapers and the magical view - frame the scene, the view reflects both the chaos and the explosion. Captured at midday with razor-sharp shadows enhanced by the dramatic light from the explosion. The composition focuses on the dramatic moment of the collision with dynamic movement and debris. The image is taken from a high bird's eye view, wide angle, documentary photography style, phase one 1Q4 detail, f/8 aperture, high bird's eye view, wide angle lens, increase saturation 12%, increase contrast 5%, increase sharpness/clarity 7%, format widescreen 16:9."</p>
+                    <button class="copy-btn" data-prompt="Create an ultra-realistic (hyper-realistic) dramatic scene, frozen in time, of the person from the attached image, running ahead on a street in central Kuala Lumpur, Malaysia. He has a shocked and surprised facial expression with wide-open eyes and an open mouth. The man is very muscular and has a well-trained physique, he is wearing a short-sleeved Hawaiian shirt (vibrant white/orange palm print) and shorts in the same pattern, billowing violently from the fast wind from running. Behind him, an Airbus A320 from Virgin Atlantic is about to crash into the ground with the nose pointing diagonally downwards. Both of the aircraft engines is burning heavily and strong flames are shooting out from it. In the background, the Petrona Twin Towers are visible, where one of the towers is burning heavily and the middle walkway between the towers is about to collapse to the ground. Several skyscrapers along the path where the man is running are burning on different floors and there is a lot of debris flying to the ground, - capture the moment when a helicopter dramatically crashes into a skyscraper and explodes dramatically, a big massive fireball and smoke plume is created that illuminates the stage with orange and red light. All the mighty skyscrapers and the magical view - frame the scene, the view reflects both the chaos and the explosion. Captured at midday with razor-sharp shadows enhanced by the dramatic light from the explosion. The composition focuses on the dramatic moment of the collision with dynamic movement and debris. The image is taken from a high bird's eye view, wide angle, documentary photography style, phase one 1Q4 detail, f/8 aperture, high bird's eye view, wide angle lens, increase saturation 12%, increase contrast 5%, increase sharpness/clarity 7%, format widescreen 16:9."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 90 -->
+            <div class="card">
+                <img class="card-img" src="/images/110.jpeg" alt="Man on skyscraper edge Manila night" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">Use the exact same face from the uploaded photo — do not change anything about the facial structure, skin tone, sunglasses, or cap, only add a slight smile. Maintain the exact expression and facial features. A hyper-realistic cinematic portrait of a man in his mid-40s standing on the edge of a very tall skyscraper overlooking a bustling Philippine metropolis at night. He wears a red and white jersey jacket with a bold letter "W" on the left side, blue jeans, a cream baseball cap withthe name "Wilson" on the front, and red and white Nike sneakers. His arms are wide open, as if embracing freedom. The scene is captured with a 360° wide-angle lens from above, showing a panoramic view of the city filled with glowing high-rise buildings, neon rooftop signs, busy streetlights, and the vibrant pulse of nightlife. The urban atmosphere is modern, calm, and fashionable, with a tense yet cool vibe. Natural nighttime lighting reflects off glass towers and bustling avenues, all capturedwith DSLR-level sharpness and clarity. The perspective emphasizes height, depth, and majesty, creating an elegant cityscape full of vibrant energy. High resolution, 4:3 landscape ratio.</p>
+                    <button class="copy-btn" data-prompt="Use the exact same face from the uploaded photo — do not change anything about the facial structure, skin tone, sunglasses, or cap, only add a slight smile. Maintain the exact expression and facial features. A hyper-realistic cinematic portrait of a man in his mid-40s standing on the edge of a very tall skyscraper overlooking a bustling Philippine metropolis at night. He wears a red and white jersey jacket with a bold letter "W" on the left side, blue jeans, a cream baseball cap withthe name "Wilson" on the front, and red and white Nike sneakers. His arms are wide open, as if embracing freedom. The scene is captured with a 360° wide-angle lens from above, showing a panoramic view of the city filled with glowing high-rise buildings, neon rooftop signs, busy streetlights, and the vibrant pulse of nightlife. The urban atmosphere is modern, calm, and fashionable, with a tense yet cool vibe. Natural nighttime lighting reflects off glass towers and bustling avenues, all capturedwith DSLR-level sharpness and clarity. The perspective emphasizes height, depth, and majesty, creating an elegant cityscape full of vibrant energy. High resolution, 4:3 landscape ratio."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 91 -->
+            <div class="card">
+                <img class="card-img" src="/images/87.jpeg" alt="Medieval leather journal cover embossed" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">A cinematic close-up of a medieval leather journal cover resting on an aged wooden table. The leather is dark, textured, and weathered, with visible creases, scratches, and a soft patina from centuries of use. At the center, your logo is embossed deeply into the leather, pressed like a medieval craftsman's stamp — sharp, tactile, and casting delicate shadows in the indentations.Surrounding the logo, intricate hand-tooled border patterns frame the emblem, while sturdy stitching runs along the journal's edges. On the table nearby, faintly visible objects add to the medieval atmosphere: a brass candleholder with melted wax, the corner of a rolled parchment scroll, and a quill resting on ink-stained cloth. Warm golden light from a flickering flame falls across the leather, highlighting the grain and embossing, while the background fades into soft shadows.The overall mood is historical, authentic, and reverent — the journal feels like an ancient relic, with the logo preserved as a timeless symbol of heritage.</p>
+                    <button class="copy-btn" data-prompt="A cinematic close-up of a medieval leather journal cover resting on an aged wooden table. The leather is dark, textured, and weathered, with visible creases, scratches, and a soft patina from centuries of use. At the center, your logo is embossed deeply into the leather, pressed like a medieval craftsman's stamp — sharp, tactile, and casting delicate shadows in the indentations.Surrounding the logo, intricate hand-tooled border patterns frame the emblem, while sturdy stitching runs along the journal's edges. On the table nearby, faintly visible objects add to the medieval atmosphere: a brass candleholder with melted wax, the corner of a rolled parchment scroll, and a quill resting on ink-stained cloth. Warm golden light from a flickering flame falls across the leather, highlighting the grain and embossing, while the background fades into soft shadows.The overall mood is historical, authentic, and reverent — the journal feels like an ancient relic, with the logo preserved as a timeless symbol of heritage."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 92 -->
+            <div class="card">
+                <img class="card-img" src="/images/95.jpeg" alt="Miniature baby animal on pastel nail" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">Ultra-realistic adorable miniature baby [ANIMAL] perched on a pastel-painted nail, soft baby-pink manicure, dreamy pastel purple background, high detail, cinematic lighting, hyperrealistic skin textures, warm soft glow, shallow depth of field, photorealism –v 6.1 –ar 4:5 –q 2 –s 700 –no text, logo, blur</p>
+                    <button class="copy-btn" data-prompt="Ultra-realistic adorable miniature baby [ANIMAL] perched on a pastel-painted nail, soft baby-pink manicure, dreamy pastel purple background, high detail, cinematic lighting, hyperrealistic skin textures, warm soft glow, shallow depth of field, photorealism –v 6.1 –ar 4:5 –q 2 –s 700 –no text, logo, blur"><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 93 -->
+            <div class="card">
+                <img class="card-img" src="/images/60.jpeg" alt="Miniature scene inside glass bottle" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">A miniature scene inside a transparent glass bottle with a cork lid. At the top of the bottle, there's a small light bulb emitting a glow. Beneath the light, a miniature figure of a cute girl is seated on a pile of rocks. The person appears to be having selfie and drinking Starbucks. The bottle is being held by a hand, suggesting it's a handheld art piece or decorative item.</p>
+                    <button class="copy-btn" data-prompt="A miniature scene inside a transparent glass bottle with a cork lid. At the top of the bottle, there's a small light bulb emitting a glow. Beneath the light, a miniature figure of a cute girl is seated on a pile of rocks. The person appears to be having selfie and drinking Starbucks. The bottle is being held by a hand, suggesting it's a handheld art piece or decorative item."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 94 -->
+            <div class="card">
+                <img class="card-img" src="/images/100.jpeg" alt="Xbox showroom miniature diorama" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">A hyper-detailed miniature diorama of an Xbox showroom enclosed in a glass display. On top, a glossy green 3D Xbox sphere logo shines with metallic reflections. Inside the showroom, three tiny figurines in business attire stand, observing shelves filled with Xbox consoles, controllers, and accessories. The scene is mounted on a round concrete base, held delicately in a human hand.\n\nLighting is soft, cinematic, and realistic, highlighting the miniature craftsmanship</p>
+                    <button class="copy-btn" data-prompt="A hyper-detailed miniature diorama of an Xbox showroom enclosed in a glass display. On top, a glossy green 3D Xbox sphere logo shines with metallic reflections. Inside the showroom, three tiny figurines in business attire stand, observing shelves filled with Xbox consoles, controllers, and accessories. The scene is mounted on a round concrete base, held delicately in a human hand. Lighting is soft, cinematic, and realistic, highlighting the miniature craftsmanship"><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 95 -->
+            <div class="card">
+                <img class="card-img" src="/images/88.jpeg" alt="Mona Lisa redesigned in style" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">Redesign the Mona Lisa in the style of [STYLE/ERA]. Keep her iconic pose and subtle smile recognizable, but fully transform the artistic medium, textures, and atmosphere to match that style. Use authentic colors, details, and visual motifs from [STYLE/ERA]. Make it visually striking, realistic, and high-quality, 1080×1080.</p>
+                    <button class="copy-btn" data-prompt="Redesign the Mona Lisa in the style of [STYLE/ERA]. Keep her iconic pose and subtle smile recognizable, but fully transform the artistic medium, textures, and atmosphere to match that style. Use authentic colors, details, and visual motifs from [STYLE/ERA]. Make it visually striking, realistic, and high-quality, 1080×1080."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 96 -->
+            <div class="card">
+                <img class="card-img" src="/images/126.jpeg" alt="Monster Jam World Finals poster" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">Epic poster design for the Monster Jam World Finals, hyper-realistic and cinematic. A professional Monster Jam driver (attached photo) stands proudly in the center, wearing a sponsor-branded racing suit, serious expression. On the left side, a close-up portrait without a helmet; on the right side, a close-up portrait with helmet. Background is dark with glowing red streaks, symbolizing power, speed, and adrenaline.At the bottom, three iconic Monster Jam trucks leap into action on a dirt arena: Grave Digger with its black-green skull-and-flames livery, Max-D (Maximum Destruction) with spiked armor and metallic silver finish, El Toro Loco with its fiery orange bull horns. Dust explodes around the trucks as they perform dramatic jumps. Oversized tires, detailed textures, and glowing stadium lights emphasize the scale and energy of the World Finals.Bottom text: MONSTER JAM WORLD FINALS THE LEGENDS UNLEASHED POWER. SPEED. DOMINATION. Ultra-realistic quality, high resolution, with authentic branding and legendary Monster Jam trucks at their most epic.</p>
+                    <button class="copy-btn" data-prompt="Epic poster design for the Monster Jam World Finals, hyper-realistic and cinematic. A professional Monster Jam driver (attached photo) stands proudly in the center, wearing a sponsor-branded racing suit, serious expression. On the left side, a close-up portrait without a helmet; on the right side, a close-up portrait with helmet. Background is dark with glowing red streaks, symbolizing power, speed, and adrenaline.At the bottom, three iconic Monster Jam trucks leap into action on a dirt arena: Grave Digger with its black-green skull-and-flames livery, Max-D (Maximum Destruction) with spiked armor and metallic silver finish, El Toro Loco with its fiery orange bull horns. Dust explodes around the trucks as they perform dramatic jumps. Oversized tires, detailed textures, and glowing stadium lights emphasize the scale and energy of the World Finals.Bottom text: MONSTER JAM WORLD FINALS THE LEGENDS UNLEASHED POWER. SPEED. DOMINATION. Ultra-realistic quality, high resolution, with authentic branding and legendary Monster Jam trucks at their most epic."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 97 -->
+            <div class="card">
+                <img class="card-img" src="/images/16.jpeg" alt="Moody portrait selfie with shadow" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">Create a moody, mysterious portrait using my selfie.\nKeep the same lighting, background, and camera angle as the reference: warm golden-hour sunlight casting dramatic shadows on a plain wall. Replace my hairstyle with medium-length, slightly wavy hair. Smoothen the skin to make it fair and flawless, and maintain a calm, introspective expression. Ensure the strong shadow of the face on the wall is visible. Ratio:\n4:3. Match the pose and overall cinematic tone.\nHala!ka perfect ba!</p>
+                    <button class="copy-btn" data-prompt="Create a moody, mysterious portrait using my selfie. Keep the same lighting, background, and camera angle as the reference: warm golden-hour sunlight casting dramatic shadows on a plain wall. Replace my hairstyle with medium-length, slightly wavy hair. Smoothen the skin to make it fair and flawless, and maintain a calm, introspective expression. Ensure the strong shadow of the face on the wall is visible. Ratio: 4:3. Match the pose and overall cinematic tone. Hala!ka perfect ba!"><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 98 -->
+            <div class="card">
+                <img class="card-img" src="/images/102.jpeg" alt="Man smoking cigarette with whiskey" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">A cinematic low-light portrait of a man sitting relaxed on a couch, wearing an open button silk shirt with sweat marks, sunglasses, and a necklace. Wearing Cap backwords,He is holding a cigarette in his mouth while lighting it with a metallic lighter in one hand and holding a glass of dark whiskey in the other hand. The background is dim and shadowy, emphasizing a moody, dramatic atmosphere. His facial expression is calm, slightly tilted back, enjoying the moment with a cool attitude.The lighting is warm, dark, and focused on his face and chest, creating a cinematic noir look. Keep the same framing, same background, same color tone, same size, and same details as the original photo.</p>
+                    <button class="copy-btn" data-prompt="A cinematic low-light portrait of a man sitting relaxed on a couch, wearing an open button silk shirt with sweat marks, sunglasses, and a necklace. Wearing Cap backwords,He is holding a cigarette in his mouth while lighting it with a metallic lighter in one hand and holding a glass of dark whiskey in the other hand. The background is dim and shadowy, emphasizing a moody, dramatic atmosphere. His facial expression is calm, slightly tilted back, enjoying the moment with a cool attitude.The lighting is warm, dark, and focused on his face and chest, creating a cinematic noir look. Keep the same framing, same background, same color tone, same size, and same details as the original photo."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 99 -->
+            <div class="card">
+                <img class="card-img" src="/images/33.jpeg" alt="Elevator flooded with Red Bull cans" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">Hyperrealistic [x:y] poster depicting stylish office elevator doors slightly ajar, revealing an interior completely flooded with an overwhelming amount of [uploaded image], each prominently featuring the logo and brand name of [Red Bull]. The scene is captured from a dynamic low-angle perspective, with dramatic studio lighting creating sharp contrasts and deep shadows. The background blends seamlessly into a sleek, modern office environment, while the color palette focuses on the brand's signature hues with metallic accents. Rendered in ultra-detailed, photorealistic style with crisp textures and vibrant colors for maximum visual impact. 4:5</p>
+                    <button class="copy-btn" data-prompt="Hyperrealistic [x:y] poster depicting stylish office elevator doors slightly ajar, revealing an interior completely flooded with an overwhelming amount of [uploaded image], each prominently featuring the logo and brand name of [Red Bull]. The scene is captured from a dynamic low-angle perspective, with dramatic studio lighting creating sharp contrasts and deep shadows. The background blends seamlessly into a sleek, modern office environment, while the color palette focuses on the brand's signature hues with metallic accents. Rendered in ultra-detailed, photorealistic style with crisp textures and vibrant colors for maximum visual impact. 4:5"><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+
+            <!-- Card 100 -->
+            <div class="card">
+                <img class="card-img" src="/images/48.jpeg" alt="Elevator flooded with objects" loading="lazy">
+                <div class="card-content">
+                    <p class="card-text">Hyperrealistic [x:y] poster depicting stylish office elevator doors slightly ajar, revealing an interior completely flooded with an overwhelming amount of [object], each prominently featuring the logo and brand name of [brand]. The scene is captured from a dynamic low-angle perspective, with dramatic studio lighting creating sharp contrasts and deep shadows. The background blends seamlessly into a sleek, modern office environment, while the color palette focuses on the brand's signature hues with metallic accents. Rendered in ultra-detailed, photorealistic style with crisp textures and vibrant colors for maximum visual impact.</p>
+                    <button class="copy-btn" data-prompt="Hyperrealistic [x:y] poster depicting stylish office elevator doors slightly ajar, revealing an interior completely flooded with an overwhelming amount of [object], each prominently featuring the logo and brand name of [brand]. The scene is captured from a dynamic low-angle perspective, with dramatic studio lighting creating sharp contrasts and deep shadows. The background blends seamlessly into a sleek, modern office environment, while the color palette focuses on the brand's signature hues with metallic accents. Rendered in ultra-detailed, photorealistic style with crisp textures and vibrant colors for maximum visual impact."><i class="fas fa-copy"></i> Copy Prompt</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGINATION - Page 5 active -->
+        <div class="pagination">
+            <a href="page4.html"><i class="fas fa-chevron-left"></i> Prev</a>
+            <a href="../index.html">1</a>
+            <a href="page2.html">2</a>
+            <a href="page3.html">3</a>
+            <a href="page4.html">4</a>
+            <a href="#" class="active">5</a>
+            <span class="ellipsis">...</span>
+            <a href="page17.html">17</a>
+            <a href="page18.html">18</a>
+            <a href="page19.html">19</a>
+            <a href="page6.html">Next <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span class="footer-site-name">Promptgalary.com</span>
+                <div class="footer-nav-links">
+                    <a href="/">Home</a>
+                    <a href="/prompts">Prompts</a>
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/policy/">Privacy</a>
+                    <a href="/term/">Terms</a>
+                    <a href="/disclaimer/">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61556686528782" target="_blank" rel="noopener" aria-label="Facebook page"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/sanvi.al.evan" target="_blank" rel="noopener" aria-label="Facebook profile"><i class="fab fa-facebook"></i></a>
+                    <a href="https://github.com/sanvi009" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.tiktok.com/@brainloom.online" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/_brainloom.online/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/brainloomonline" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://www.youtube.com/@brainloom.online" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="footer-extra-compact">
+                    <a href="/faqs.html"><i class="far fa-folder"></i> Faq</a>
+                    <a href="/sitemap.xml"><i class="fas fa-sitemap"></i> Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCG2EZ77R6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KCG2EZ77R6');
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', async function() {
+                const promptText = this.getAttribute('data-prompt');
+                try {
+                    await navigator.clipboard.writeText(promptText);
+                    const originalHTML = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    this.classList.add('copied');
+                    setTimeout(() => {
+                        this.innerHTML = originalHTML;
+                        this.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy:', err);
+                }
+            });
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const dropdown = document.getElementById('legalDropdown');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('show');
+            });
+        }
+
+        const dropBtn = document.querySelector('#legalDropdown .dropbtn');
+        if (dropBtn) {
+            dropBtn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 800) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 800) {
+                if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                    navLinks.classList.remove('show');
+                    dropdown.classList.remove('active');
+                }
+            }
+        });
+
+        if (navLinks) {
+            navLinks.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 800) {
+                navLinks.classList.remove('show');
+                dropdown.classList.remove('active');
+            }
+        });
+
+        if (navLinks) {
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 800) {
+                        navLinks.classList.remove('show');
+                    }
+                });
+            });
+        }
+
+        function adjustMobileFooter() {
+            const footerRight = document.querySelector('.footer-right');
+            if (!footerRight) return;
+            const isMobile = window.innerWidth <= 900;
+            const existingNavBlock = document.querySelector('.mobile-nav-links');
+            if (existingNavBlock) existingNavBlock.remove();
+
+            if (isMobile) {
+                const navLinksContainer = document.querySelector('.footer-left .footer-nav-links');
+                if (navLinksContainer) {
+                    const links = navLinksContainer.querySelectorAll('a');
+                    if (links.length) {
+                        const mobileNavBlock = document.createElement('div');
+                        mobileNavBlock.className = 'mobile-nav-links';
+                        links.forEach(link => {
+                            const clone = link.cloneNode(true);
+                            clone.removeAttribute('style');
+                            mobileNavBlock.appendChild(clone);
+                        });
+                        footerRight.insertBefore(mobileNavBlock, footerRight.firstChild);
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('resize', adjustMobileFooter);
+        window.addEventListener('load', adjustMobileFooter);
+        adjustMobileFooter();
+    </script>
+</body>
+</html>
