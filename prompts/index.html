@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
@@ -11,10 +10,8 @@
     <meta name="description" content="Explore 15+ powerful AI image prompts for vintage aesthetics, 3D characters, branding, cinematic posters, surreal art, and more.">
     <meta name="robots" content="index, follow">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/asset/favicon.png">
 
-    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
@@ -35,7 +32,7 @@
             min-height: 100vh;
         }
 
-        /* ===== NAVBAR (original) ===== */
+        /* ===== NAVBAR ===== */
         .navbar {
             background: rgba(255,255,255,0.92);
             backdrop-filter: blur(12px);
@@ -198,7 +195,7 @@
             box-shadow: 0 6px 12px -10px #2563eb;
         }
 
-        /* ===== FOOTER (original) ===== */
+        /* ===== FOOTER ===== */
         .footer {
             background: #ffffff;
             border-top: 1px solid #edf0f5;
@@ -331,170 +328,43 @@
 
         /* mobile footer adjustments */
         @media screen and (max-width: 900px) {
-            .footer {
-                padding: 0.15rem 0.6rem;
-            }
-            .footer-content {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0.1rem;
-            }
-            .footer-left {
-                width: 100%;
-                display: block;
-            }
-            .footer-site-name {
-                font-size: 1.1rem;
-                display: block;
-                line-height: 1.1;
-                margin: 0.1rem 0 0 0;
-                background: linear-gradient(135deg, #1e2b3f, #1a253a);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-            .footer-left .footer-nav-links {
-                display: none;
-            }
-            .footer-right {
-                width: 100%;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.1rem;
-                margin-top: 0;
-            }
-            .mobile-nav-links {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                gap: 0.15rem 0.4rem;
-                width: 100%;
-                line-height: 1;
-            }
-            .mobile-nav-links a {
-                color: #5a6b82;
-                text-decoration: none;
-                font-size: 0.6rem;
-                font-weight: 470;
-                white-space: nowrap;
-                padding: 0 0.1rem;
-                border-bottom: 1px solid transparent;
-                transition: color 0.15s;
-            }
-            .mobile-nav-links a:hover {
-                color: #1d2a40;
-                border-bottom-color: #9aabbf;
-            }
-            .social-links {
-                gap: 0.1rem;
-            }
-            .social-links a {
-                width: 1.25rem;
-                height: 1.25rem;
-                font-size: 0.65rem;
-                background: #f0f4fc;
-            }
-            .footer-extra-compact {
-                border-left: none;
-                padding-left: 0;
-                gap: 0.2rem;
-            }
-            .footer-extra-compact a {
-                font-size: 0.58rem;
-                padding: 0.05rem 0.4rem;
-                background: #f0f4fc;
-                line-height: 1.2;
-            }
+            .footer { padding: 0.15rem 0.6rem; }
+            .footer-content { flex-direction: column; align-items: stretch; gap: 0.1rem; }
+            .footer-left { width: 100%; display: block; }
+            .footer-site-name { font-size: 1.1rem; display: block; line-height: 1.1; margin: 0.1rem 0 0 0; }
+            .footer-left .footer-nav-links { display: none; }
+            .footer-right { width: 100%; flex-direction: column; align-items: flex-start; gap: 0.1rem; margin-top: 0; }
+            .mobile-nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.15rem 0.4rem; width: 100%; line-height: 1; }
+            .mobile-nav-links a { color: #5a6b82; text-decoration: none; font-size: 0.6rem; font-weight: 470; padding: 0 0.1rem; }
+            .social-links a { width: 1.25rem; height: 1.25rem; font-size: 0.65rem; }
+            .footer-extra-compact { border-left: none; padding-left: 0; gap: 0.2rem; }
+            .footer-extra-compact a { font-size: 0.58rem; padding: 0.05rem 0.4rem; }
         }
 
         @media screen and (max-width: 480px) {
-            .footer {
-                padding: 0.1rem 0.5rem;
-            }
-            .footer-site-name {
-                font-size: 1.0rem;
-                line-height: 1;
-                margin: 0.05rem 0;
-            }
-            .mobile-nav-links a {
-                font-size: 0.55rem;
-            }
-            .social-links a {
-                width: 1.15rem;
-                height: 1.15rem;
-                font-size: 0.6rem;
-            }
-            .footer-extra-compact a {
-                font-size: 0.52rem;
-                padding: 0 0.3rem;
-            }
+            .footer { padding: 0.1rem 0.5rem; }
+            .footer-site-name { font-size: 1.0rem; line-height: 1; margin: 0.05rem 0; }
+            .mobile-nav-links a { font-size: 0.55rem; }
+            .social-links a { width: 1.15rem; height: 1.15rem; font-size: 0.6rem; }
+            .footer-extra-compact a { font-size: 0.52rem; padding: 0 0.3rem; }
         }
 
         /* navbar mobile responsive */
         @media screen and (max-width: 800px) {
-            .navbar {
-                padding: 0.5rem 1.2rem;
-            }
+            .navbar { padding: 0.5rem 1.2rem; }
             .nav-links {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                align-items: stretch;
-                background: #ffffff;
-                padding: 1.2rem 0.6rem 0.9rem 0.6rem;
-                gap: 0.4rem;
-                border-top: 1px solid #eceff4;
-                margin-top: 0.5rem;
-                border-radius: 28px;
+                display: none; width: 100%; flex-direction: column; align-items: stretch;
+                background: #ffffff; padding: 1.2rem 0.6rem 0.9rem 0.6rem; gap: 0.4rem;
+                border-top: 1px solid #eceff4; margin-top: 0.5rem; border-radius: 28px;
                 box-shadow: inset 0 6px 12px -12px rgba(0,0,0,0.1);
             }
-            .nav-links.show {
-                display: flex;
-            }
-            .menu-toggle {
-                display: inline-flex;
-                align-items: center;
-            }
-            .dropdown {
-                width: 100%;
-            }
-            .dropbtn {
-                width: 100%;
-                justify-content: space-between;
-                background: #f6f9fe;
-                border-radius: 40px;
-                padding: 0.7rem 1.3rem;
-                border: 1px solid #e5eaf0;
-            }
-            .dropdown-content {
-                position: static;
-                right: auto;
-                left: auto;
-                box-shadow: none;
-                border: none;
-                background: #f1f5fc;
-                border-radius: 24px;
-                margin: 0.4rem 0 0.2rem 1rem;
-                padding: 0.5rem 0;
-                width: calc(100% - 1.8rem);
-                min-width: auto;
-                backdrop-filter: none;
-            }
-            .dropdown-content a {
-                padding: 0.7rem 1.5rem;
-                white-space: normal;
-                border-left: 2px solid transparent;
-            }
-            .dropdown-content a:hover {
-                border-left-color: #2563eb;
-            }
-            .dropdown:hover .dropdown-content {
-                display: none; 
-            }
-            .dropdown.active .dropdown-content {
-                display: block !important;
-                animation: fadeSlide 0.18s ease;
-            }
+            .nav-links.show { display: flex; }
+            .menu-toggle { display: inline-flex; align-items: center; }
+            .dropdown { width: 100%; }
+            .dropbtn { width: 100%; justify-content: space-between; background: #f6f9fe; border-radius: 40px; padding: 0.7rem 1.3rem; border: 1px solid #e5eaf0; }
+            .dropdown-content { position: static; box-shadow: none; border: none; background: #f1f5fc; border-radius: 24px; margin: 0.4rem 0 0.2rem 1rem; padding: 0.5rem 0; width: calc(100% - 1.8rem); }
+            .dropdown-content a { padding: 0.7rem 1.5rem; white-space: normal; border-left: 2px solid transparent; }
+            .dropdown.active .dropdown-content { display: block !important; animation: fadeSlide 0.18s ease; }
         }
 
         main {
@@ -511,7 +381,7 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .section-header h1 {
@@ -526,11 +396,20 @@
 
         .section-header p {
             color: #4a5b78;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
             margin-top: 0.5rem;
-            max-width: 680px;
-            margin-left: auto;
-            margin-right: auto;
+        }
+
+        /* ===== NEW: INTRO TEXT FOR SEO / THIN CONTENT FIX ===== */
+        .intro-text {
+            max-width: 850px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding: 0 1rem;
         }
 
         .cards-grid {
@@ -630,40 +509,21 @@
         }
 
         @media screen and (max-width: 700px) {
-            .gallery-section {
-                padding: 0 1.2rem;
-                margin: 1.5rem auto 2.5rem;
-            }
-            .cards-grid {
-                gap: 1.25rem;
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            }
-            .card-image {
-                height: 180px;
-            }
-            .card-content h3 {
-                font-size: 1.1rem;
-            }
-            .section-header h1 {
-                font-size: 1.8rem;
-            }
+            .gallery-section { padding: 0 1.2rem; margin: 1.5rem auto 2.5rem; }
+            .cards-grid { gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+            .card-image { height: 180px; }
+            .card-content h3 { font-size: 1.1rem; }
+            .section-header h1 { font-size: 1.8rem; }
         }
 
         @media screen and (max-width: 480px) {
-            .card-image {
-                height: 160px;
-            }
-            .card-content {
-                padding: 1rem 1.2rem 1.3rem;
-            }
-            .card-content h3 {
-                font-size: 1rem;
-            }
+            .card-image { height: 160px; }
+            .card-content { padding: 1rem 1.2rem 1.3rem; }
+            .card-content h3 { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- ORIGINAL NAVBAR -->
     <nav class="navbar">
         <div class="logo">
             <a href="/"><span>◈</span> promptgalary</a>
@@ -688,18 +548,203 @@
         </div>
     </nav>
 
-    <!-- MAIN: 15 ARTICLE CARDS WITH IMAGES -->
     <main>
         <div class="gallery-section">
             <div class="section-header">
                 <h1>Prompt gallery</h1>
                 <p>Curated AI image prompts — click any card to explore the full guide</p>
             </div>
-            <div class="cards-grid" id="articleCardsGrid"></div>
+            
+            <div class="intro-text">
+                Welcome to Promptgalary, your definitive resource for mastering AI image generation. Whether you are aiming to create hyper-realistic cinematic visuals, design cutting-edge high-fashion lookbooks, or capture nostalgic 1990s camera effects, crafting the perfect prompt is an art form. Our curated guides break down the parameters, keywords, and artistic concepts needed to communicate effectively with today's leading AI models. Dive into our extensive gallery below to discover tested prompt structures, lighting techniques, and style modifiers that will elevate your digital art, web development projects, and brand aesthetics from basic to breathtaking.
+            </div>
+
+            <div class="cards-grid" id="articleCardsGrid">
+                
+                <a class="article-card" href="/blog/1990s-nostalgia-vintage-camera-effects.html" aria-label="Read guide: 1990s Nostalgia & Vintage Camera Effects">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="1990s Nostalgia & Vintage Camera Effects" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Retro Aesthetic</div>
+                        <h3>1990s Nostalgia & Vintage Camera Effects</h3>
+                        <div class="card-excerpt">Analog grain, light leaks, warm color grading, and lo-fi camera simulations for authentic vintage looks.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/3d-caricatures-dioramas-designer-toys.html" aria-label="Read guide: 3D Caricatures, Dioramas & Designer Toys">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="3D Caricatures, Dioramas & Designer Toys" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Character Design</div>
+                        <h3>3D Caricatures, Dioramas & Designer Toys</h3>
+                        <div class="card-excerpt">Sculptural characters, collectible toy aesthetics, miniature dioramas, and playful 3D figurines.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/ai-image-prompts-for-couples.html" aria-label="Read guide: AI Image Prompts for Couples">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="AI Image Prompts for Couples" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Romance & Portraits</div>
+                        <h3>AI Image Prompts for Couples</h3>
+                        <div class="card-excerpt">Candid couple photography, romantic lighting, emotional compositions, and shared moments.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/ai-prompt-for-instagram-facebook-dp.html" aria-label="Read guide: AI Prompt for Instagram & Facebook DP">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="AI Prompt for Instagram & Facebook DP" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Social Media</div>
+                        <h3>AI Prompt for Instagram & Facebook DP</h3>
+                        <div class="card-excerpt">Striking profile pictures, glowing avatars, minimalist headshots, and vibrant personal branding.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/ai-prompt-for-logo-and-branding.html" aria-label="Read guide: AI Prompt for Logo & Branding">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="AI Prompt for Logo & Branding" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Brand Identity</div>
+                        <h3>AI Prompt for Logo & Branding</h3>
+                        <div class="card-excerpt">Modern logos, wordmarks, abstract symbols, and cohesive brand identity systems.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/ai-prompt-for-movie-poster.html" aria-label="Read guide: AI Prompt for Movie Poster">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="AI Prompt for Movie Poster" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Cinematic Art</div>
+                        <h3>AI Prompt for Movie Poster</h3>
+                        <div class="card-excerpt">Dramatic compositions, epic typography, theatrical lighting, and blockbuster poster designs.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/ai-prompt-for-product-food-photography.html" aria-label="Read guide: AI Prompt for Product & Food Photography">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="AI Prompt for Product & Food Photography" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Commercial</div>
+                        <h3>AI Prompt for Product & Food Photography</h3>
+                        <div class="card-excerpt">Studio lighting, mouthwatering food styling, product hero shots, and packaging mockups.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/extreme-slow-motion-epic-action-sequences.html" aria-label="Read guide: Extreme Slow Motion & Epic Action">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="Extreme Slow Motion & Epic Action" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Action Cinematics</div>
+                        <h3>Extreme Slow Motion & Epic Action</h3>
+                        <div class="card-excerpt">High-speed splashes, particle effects, impact moments, and adrenaline-filled freeze frames.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/gemini-image-prompt-for-boys.html" aria-label="Read guide: Gemini Image Prompt for Boys">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="Gemini Image Prompt for Boys" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Youth Portraits</div>
+                        <h3>Gemini Image Prompt for Boys</h3>
+                        <div class="card-excerpt">Urban style, sporty attitude, expressive male portraits, and modern casual aesthetics.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/gemini-image-prompt-for-girls.html" aria-label="Read guide: Gemini Image Prompt for Girls">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="Gemini Image Prompt for Girls" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Feminine Aesthetic</div>
+                        <h3>Gemini Image Prompt for Girls</h3>
+                        <div class="card-excerpt">Ethereal portraits, dreamy backdrops, edgy streetwear, and soft editorial looks.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/gemini-image-prompt-with-sunglass.html" aria-label="Read guide: Gemini Image Prompt with Sunglass">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="Gemini Image Prompt with Sunglass" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Accessories</div>
+                        <h3>Gemini Image Prompt with Sunglass</h3>
+                        <div class="card-excerpt">Reflective lenses, sleek frames, shadow play, and high-fashion eyewear concepts.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/gemini-prompt-for-aesthetic-photos.html" aria-label="Read guide: Gemini Prompt for Aesthetic Photos">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="Gemini Prompt for Aesthetic Photos" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Visual Vibes</div>
+                        <h3>Gemini Prompt for Aesthetic Photos</h3>
+                        <div class="card-excerpt">Moody color palettes, pastel gradients, vaporwave moods, and minimalist compositions.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/prompt-to-generate-image-with-car-bike-or-pet.html" aria-label="Read guide: Prompt to Generate Image with Car, Bike or Pet">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="Prompt to Generate Image with Car, Bike or Pet" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Lifestyle</div>
+                        <h3>Prompt to Generate Image with Car, Bike or Pet</h3>
+                        <div class="card-excerpt">Dynamic vehicle shots, pet portraits, travel companions, and lifestyle action scenes.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/surreal-abstract-art-psychological-horror.html" aria-label="Read guide: Surreal Abstract Art & Psychological Horror">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="Surreal Abstract Art & Psychological Horror" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Dark Surrealism</div>
+                        <h3>Surreal Abstract Art & Psychological Horror</h3>
+                        <div class="card-excerpt">Dreamlike nightmares, eerie metaphors, abstract dread, and haunting visual narratives.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a class="article-card" href="/blog/triptych-photo-prompts.html" aria-label="Read guide: Triptych Photo Prompts">
+                    <div class="card-image">
+                        <img src="/images/192.jpg" alt="Triptych Photo Prompts" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Narrative Art</div>
+                        <h3>Triptych Photo Prompts</h3>
+                        <div class="card-excerpt">Three-panel storytelling, split scenes, visual poetry, and sequential imagery.</div>
+                        <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+            </div>
         </div>
     </main>
 
-    <!-- ORIGINAL FOOTER -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
@@ -734,7 +779,6 @@
         <div class="footer-micro"></div>
     </footer>
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCG2EZ77R6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -829,49 +873,6 @@
             window.addEventListener('resize', adjustMobileFooter);
             window.addEventListener('load', adjustMobileFooter);
             adjustMobileFooter();
-
-            // ----- GENERATE 15 ARTICLE CARDS WITH IMAGES (placeholder src) -----
-            const pagesData = [
-                { file: "1990s-nostalgia-vintage-camera-effects.html", title: "1990s Nostalgia & Vintage Camera Effects", category: "Retro Aesthetic", excerpt: "Analog grain, light leaks, warm color grading, and lo-fi camera simulations for authentic vintage looks." },
-                { file: "3d-caricatures-dioramas-designer-toys.html", title: "3D Caricatures, Dioramas & Designer Toys", category: "Character Design", excerpt: "Sculptural characters, collectible toy aesthetics, miniature dioramas, and playful 3D figurines." },
-                { file: "ai-image-prompts-for-couples.html", title: "AI Image Prompts for Couples", category: "Romance & Portraits", excerpt: "Candid couple photography, romantic lighting, emotional compositions, and shared moments." },
-                { file: "ai-prompt-for-instagram-facebook-dp.html", title: "AI Prompt for Instagram & Facebook DP", category: "Social Media", excerpt: "Striking profile pictures, glowing avatars, minimalist headshots, and vibrant personal branding." },
-                { file: "ai-prompt-for-logo-and-branding.html", title: "AI Prompt for Logo & Branding", category: "Brand Identity", excerpt: "Modern logos, wordmarks, abstract symbols, and cohesive brand identity systems." },
-                { file: "ai-prompt-for-movie-poster.html", title: "AI Prompt for Movie Poster", category: "Cinematic Art", excerpt: "Dramatic compositions, epic typography, theatrical lighting, and blockbuster poster designs." },
-                { file: "ai-prompt-for-product-food-photography.html", title: "AI Prompt for Product & Food Photography", category: "Commercial", excerpt: "Studio lighting, mouthwatering food styling, product hero shots, and packaging mockups." },
-                { file: "extreme-slow-motion-epic-action-sequences.html", title: "Extreme Slow Motion & Epic Action", category: "Action Cinematics", excerpt: "High-speed splashes, particle effects, impact moments, and adrenaline-filled freeze frames." },
-                { file: "gemini-image-prompt-for-boys.html", title: "Gemini Image Prompt for Boys", category: "Youth Portraits", excerpt: "Urban style, sporty attitude, expressive male portraits, and modern casual aesthetics." },
-                { file: "gemini-image-prompt-for-girls.html", title: "Gemini Image Prompt for Girls", category: "Feminine Aesthetic", excerpt: "Ethereal portraits, dreamy backdrops, edgy streetwear, and soft editorial looks." },
-                { file: "gemini-image-prompt-with-sunglass.html", title: "Gemini Image Prompt with Sunglass", category: "Accessories", excerpt: "Reflective lenses, sleek frames, shadow play, and high-fashion eyewear concepts." },
-                { file: "gemini-prompt-for-aesthetic-photos.html", title: "Gemini Prompt for Aesthetic Photos", category: "Visual Vibes", excerpt: "Moody color palettes, pastel gradients, vaporwave moods, and minimalist compositions." },
-                { file: "prompt-to-generate-image-with-car-bike-or-pet.html", title: "Prompt to Generate Image with Car, Bike or Pet", category: "Lifestyle", excerpt: "Dynamic vehicle shots, pet portraits, travel companions, and lifestyle action scenes." },
-                { file: "surreal-abstract-art-psychological-horror.html", title: "Surreal Abstract Art & Psychological Horror", category: "Dark Surrealism", excerpt: "Dreamlike nightmares, eerie metaphors, abstract dread, and haunting visual narratives." },
-                { file: "triptych-photo-prompts.html", title: "Triptych Photo Prompts", category: "Narrative Art", excerpt: "Three-panel storytelling, split scenes, visual poetry, and sequential imagery." }
-            ];
-
-            const gridContainer = document.getElementById('articleCardsGrid');
-            if (gridContainer) {
-                pagesData.forEach(page => {
-                    const card = document.createElement('a');
-                    card.className = 'article-card';
-                    card.href = `/blog/${page.file}`;
-                    card.setAttribute('aria-label', `Read guide: ${page.title}`);
-                    
-                    // Build card with image placeholder (src = /images/192.jpg for all, easy to replace later)
-                    card.innerHTML = `
-                        <div class="card-image">
-                            <img src="/images/192.jpg" alt="${page.title}" loading="lazy">
-                        </div>
-                        <div class="card-content">
-                            <div class="card-category">${page.category}</div>
-                            <h3>${page.title}</h3>
-                            <div class="card-excerpt">${page.excerpt}</div>
-                            <div class="read-more">Explore prompts <i class="fas fa-arrow-right"></i></div>
-                        </div>
-                    `;
-                    gridContainer.appendChild(card);
-                });
-            }
         })();
     </script>
 </body>
